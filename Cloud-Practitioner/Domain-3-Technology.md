@@ -68,7 +68,7 @@ graph TD
     Web1 <==> Web2
 ```
 
-## AWS Global Infrastructure (The Stretch)
+## AWS Global Infrastructure (The Ecosystem)
 
 **AWS Outposts**
    * A fully managed service that extends AWS infrastructure, services, and APIs to virtually any **on-premises** data center or co-location space.
