@@ -64,4 +64,7 @@
      * **Provisioned Throughput:** you set the performance and throughput you want regardless of how large the EFS is.
      * **Bursting Throughput:** throughput scales with the amount of storage and can burst to higher performance when needed.
     
-  
+### Amazon Simple Storage Service (S3)
+
+
+
