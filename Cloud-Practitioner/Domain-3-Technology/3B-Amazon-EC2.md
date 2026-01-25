@@ -1,3 +1,6 @@
+# Domain 3: Technology
+# (3B: Amazon Elastic Compute Cloud (EC2) Service)
+
 ## Amazon Elastic Compute Cloud (EC2)
 
 **EC2 Overview and Basics**
