@@ -59,4 +59,9 @@
    * EFS can be replicated across Regions for disaster recovery (DR) purposes.
      * **Note:** You can create a mount point in the Region the EFS is replicated (re: 2nd Region), however, that 2nd mount point will only allow **read-only** access to the EFS (the only time it won't be read-only is if your access fails over to the 2nd Region).
    * EFS can also be connect to an on-prem data center (from outside the Cloud) via Amazon Direct Connect or a VPN connect using the Linux NFS protocol.
-   * **Automatic Back Up:** EFS uses **AWS Backup** for automatic file system backups. 
+   * **Automatic Back Up:** EFS uses **AWS Backup** for automatic file system backups.
+   * **Performance Options:**
+     * **Provisioned Throughput:** you set the performance and throughput you want regardless of how large the EFS is.
+     * **Bursting Throughput:** throughput scales with the amount of storage and can burst to higher performance when needed.
+    
+  
