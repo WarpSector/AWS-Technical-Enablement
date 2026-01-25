@@ -135,4 +135,11 @@
         * Developers upload their application code --> AWS Elastic Beanstalk provisions all necessary resources to run the application and scale it as necessary (re: EC2, ASG, ECS/EKS, ELB).
         * Elastic Beanstalk is **PaaS**, because you are operating at the platform level. Amazon is running the infrastructure and the platform for you, so you can focus on testing and deploying applications and code. 
 
+## Summarizing Compute Cloud
 
+  | Category | Services | Your Mental Model |
+  | :--- | :--- | :--- |
+  | **Virtual Servers** | EC2, Lightsail | "I want a computer in the cloud." |
+  | **Containers** | ECS, EKS, Fargate | "I want to run isolated boxes (containers) of code." |
+  | **Serverless** | Lambda, Fargate | "I just want to run code; I don't care about the server." |
+  | **Automated / Batch** | Elastic Beanstalk, Batch | "I want AWS to handle the deployment or the heavy lifting." |
