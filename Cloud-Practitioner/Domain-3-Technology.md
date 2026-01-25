@@ -137,6 +137,7 @@ graph TD
 ## Amazon Elastic Compute Cloud (EC2)
 
 **EC2 Overview and Basics**
+   * **Compute is the engine of the Cloud.** This is where all the compute processing (CPU) of your Cloud applications and web services happen.
    * Amazon Elastic Compute Cloud (EC2) is an AWS service that lets you easily use compute resources in the Cloud.
    * You run virtual instances/machines in the Cloud when you use Amazon EC2.
    * Amazon EC2 instances can run Linux, Windows, or MacOS.
@@ -166,7 +167,7 @@ graph TD
    * Reliable: highly reliable environment where replacement instances can be provisioned rapidly with **Regional** service-level agreements (SLAs) of 99.99% **if architected for High Availability** (i.e., EC2 instances are spread across multiple AZs and have an elastic load balancer along with an ASG to distribute and handle the load while the first failed EC2 instance is repaired and brought back online (this is also known as "self-healing" architecture: High Availability (HA) + Fault Tolerance (FT)).
    * Inexpensive: Amazon passes on the benefit of economies of scale to the users.
    * Integrated: EC2 instances are integrated with a wide variety of AWS services (including S3, RDS, and VPC) so you can build complete services within the Cloud.
-   * Secure: EC2 works inconjunction with the VPC to provide a secure location with an IP address range you can configure to allow access to your EC2 (in combination with network security measures like Network Access Control Lists (Network ACLs) protecting your subnet boundaires, Web Application Firewalls (WAFs) protecting your application load balancers (ALBs), and Security Groups protecting the EC2 instances themselves).
+   * Secure: EC2 works inconjunction with the VPC to provide a secure location with an IP address range you can configure to allow access to your EC2 (in combination with network security measures like Network Access Control Lists (Network ACLs) protecting your subnet boundaries, Web Application Firewalls (WAFs) protecting your application load balancers (ALBs), and Security Groups protecting the EC2 instances themselves).
 
 **Amazon Machine Image (AMI)**
    * When you launch an EC2 instance, you must select an Amazon Machine Image (AMI) that specifies the type of OS you want to run, the resources you want to allocate to the VM, and the data and applications you want in the VM.
@@ -207,3 +208,23 @@ graph TD
          * Flexible pricing model that saves up to 72% on your AWS compute usage.
          * Offers lower pricing on EC2 instance usage regardless of family, OS, size, or type.
          * Savings also apply to AWS Lambda and AWS Fargate.          
+
+**EC2 Metadata and User Data**
+   * User data is a form of **bootstrapping** - you provide a script that the instance automatically executes when it first boots up without you having to manually perform whatever function the script is supposed to execute after the instance boots up (think of it as a "To Do" list for the server to carry out the first few seconds it "wakes up").
+   * Metadata is data about the EC2 instance that can be used to configure and manage the running instance (available at http://169.254.169.254/latest/meta-data
+   * **NOTE:** Metadata and User Data are NOT encrypted.
+
+**AWS Family of Compute Services**
+   * While EC2 is the "grandfather" of Amazon's compute cloud services, other compute services are available:
+      * AWS Batch:
+        * Enables developers, scientists, and engineers to easily and efficiently run hundreds of thousands of batch computing jobs on AWS.
+        * AWS Batch dynamically provisions the optimal quantity and type of compute resources for the job being processed.
+        * With AWS Batch, you package the code to run the jobs, specify any dependencies, and then submit the batch job via the AWS Management Console, AWS Command Line Interface (CLI), or an AWS Software Development Kit (SDK).
+      * Amazon Lightsail:
+        * Best for users who do not have technical expertise with AWS as this service makes it very easy for them to provision compute services.
+        * Amazon Lightsail provides compute, storage, and networking capacity and capability to deploy and manage websites, webservices, and databases in the Cloud.
+        * Amazon Lightsail includes a VM, SSD-based storage, data transfer, DNS management, and a static IP.
+        * Lets you deploy load balancers and attach block storage.
+        * Best suited for projects that require a few dozen instances or less: good for blogs, websites, web apps, e-commerce, etc.
+        * Not as powerful as EC2 instances.
+        * Has a simple management interface.
