@@ -1,6 +1,8 @@
 # Domain 3: Technology
 # (3C: Amazon Simple Storage Service (S3))
 
+## Amazon Simple Storage Service (S3)
+
 ### Storage Basics
 * **Storage is broken down into three (3) types:**
   * #### Block-Based Storage (Block):
