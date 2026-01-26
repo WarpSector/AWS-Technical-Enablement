@@ -43,7 +43,7 @@
    * Snapshots are **incremental** - once the original baseline snapshot is taken, subsequent snapshots capture the changes made to the EBS volume.
    * You can take the EBS snapshot and move that EBS volume into different AZs so multiple EC2 instances in different AZs see the same EBS volume.
    * You can also create an AMI from a snapshot and distribute them to different EC2 instances that way.
-   * **Data Lifecycle Manager:** A service you can use to automate the creation, retention, and deletion of your EBS snapshots.
+   * **Data Lifecycle Manager (DLM):** A service you can use to automate the creation, retention, and deletion of your EBS snapshots.
 
 ### Amazon Elastic File System (EFS)
    * Amazon EFS is a shared file system that can be shared across multiple EC2 instances.
