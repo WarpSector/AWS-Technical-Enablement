@@ -114,7 +114,7 @@
      * **Transition Actions:** when objects transition to different storage classes (e.g., S3 Standard transitions to S3 Standard IA after 30 days of no use/retrieval).
      * **Expiration Actions:** define when an object expires so S3 will automatically delete it. 
 
-### Storage Durability vs. Availability
+### Storage: Durability vs. Availability
    * #### Durability
      * Protection against:
       * Data Loss
@@ -157,6 +157,12 @@
         * Can be retrieved in hours (data that is unlikely to be accessed, but needs to be stored for regulatory/compliance reasons).
         * A fee is charged for retrieval. 
 
-
+### Amazon FSx
+   * **Amazon FSx offers fully managed third-party file systems for either Windows File Server (for Windows-based apps) or Lustre (for high performance computing (HPC) workloads).**
+   * #### FSx for Windows:
+     * Provides a fully managed Windows file-systems, included high-availability and multi-AZ setups. On-Prem Data Centers can access vis VPN or AWS Direct Connect.
+   * #### FSx Lustre:
+     * High performance file system optimized for fast processing of workloads suchs as machine learning, HPC, video processing, financial modeling, and electronic design automation (EDA).
+     * Lustre works natively with Amazon S3. 
 
 
