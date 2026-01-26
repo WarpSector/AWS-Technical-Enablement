@@ -146,7 +146,7 @@
    * #### Data to be Archived:
      * **S3 Glacier Instant Retrieval:**
         * Data archived for a minimum of 90 days.
-        * Can be retrieved in milliseconds (useful for data that needs to be stored, but retrieved quickly when needed).
+        * Can be retrieved in milliseconds (useful for data that needs to be archived, but retrieved quickly when needed).
         * A fee is charged for retrieval. 
      * **S3 Glacier Flexible Retrieval:**
         * Data is archived for a minimum of 90 days.
@@ -159,6 +159,9 @@
         * Expedited Rertrieval: Unavailable.
         * This solution is for data that is unlikely to be accessed, but needs to be stored for regulatory/compliance reasons.
         * A fee is charged for retrieval.
+     * **Additional Features of AWS Glacier:**
+        * **S3 Object Lock:** Objects can be "write-once read-many" (WORM) configured, which prevents the object from being overwritten or deleted for a fixed amount of time or permenantly.
+        * **S3 Glacier Vault Lock:** Applies the WORM model as a policy to the entire archive (via a JSON document) and has a 24-hour "locking" period to reverse it (if not reversed, the WORM policy applies indefinitely for the specific amount of time that not even the root user can change).  
 
 ### Amazon FSx
    * **Amazon FSx offers fully managed third-party file systems for either Windows File Server (for Windows-based apps) or Lustre (for high performance computing (HPC) workloads).**
