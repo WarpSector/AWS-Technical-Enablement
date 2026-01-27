@@ -34,3 +34,27 @@
     * **Geoproximity:** routes to closest geographic region.
     * **Latency:** uses the lowest latency routes to the resource.
     * **Multivalue Answer:**  returns several IP addresses.
+
+## Elastic Load Balancing (ELB)
+  * ### Overview
+    * Elastic Load Balancing distributes incoming web traffic and workloads across resources to provide **high availability** and **fault tolerance**.
+    * ELBs can be attached to EC2 instances, ECS/EKS Containers, IP address, and Lambda functions.
+  * ### Types of Load Balancers
+    * **Application Load Balancer (ALB):**
+      * Routes traffic based on the content of the request (L7).
+      * Used for web applications, microservices architectures (Docker containers), and Lambda targets.
+      * This is **request based**, meaning it looks at the HTTP protocol and knows where to route the traffic based on:
+        * **Path-based** routing (URL path after "/")
+        * **Host-based** routing (the domain name)
+        * **Query string-based** routing (the pararmeters in the URL strong after "?"
+        * **Source IP-based** routing (the client-side IP address)
+    * **Network Load Balancer (NLB):**
+      * Routes traffic based on the IP protocol data (L4).
+      * Offers ultra-high performance, low latency routing.
+      * Used for VPC endpoints, TCP and UDP based apps.
+    * **Gateway Load Balancer (GLB)**
+      * Listens for all packets on all ports (L3).
+      * Routes traffic to the target group specified in the "listener rules".
+      * Exchanges traffic with appliances using the **GENEVE** protocol (Port 6081).
+      * Used in "virtual appliances" such as firewalls and deep packet inspection systems.    
+
