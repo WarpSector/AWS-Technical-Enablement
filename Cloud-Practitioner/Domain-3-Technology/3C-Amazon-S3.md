@@ -185,13 +185,15 @@
      * **Volume Gateway:** gateway from on-prem to Cloud block-based storage systems.
      * **Backup Gateway:** gateway from on-prem to Cloud file-based or block-based protocols via popular backup software as if it were a "tape" (but really, it's pulling objects from S3 in the Cloud).
     
- 
-        
-
-
-
-
-
-
-
+### AWS Elastic Disaster Recovery Service (DRS)
+   * ### AWS DRS
+     * **Application Recovery:** designed to protect and recover critical applications quickly at low cost.
+     * **Reduced Downtime:** ensures minimal downtime in the event of app failure by recoving apps in AWS.
+      * Applications can be recovered from physical servers in your data center.
+      * Applications can be recovered from VMs.
+      * Applications can be recovered from the Cloud (AWS, Google, Azure, Oracle).
+   * ### Recovery Process
+     * A **staging area** is built where your data is continuous replicated in a "staging subnet" in the VPC.
+     * A **recovery subnet** is also established where data and applications replicated in the "staging area" are stored in a private subnet where your backups are held and can be tapped back to the primary site during a diaster to minimize downtime.
+     * **Conversion:** when data needs to be recovered during a disaster, AWS DRS will automatically convert your on-premises (or Cloud) data into AWS-compatible format so your data can be recovered.          
 
