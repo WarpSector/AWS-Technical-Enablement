@@ -64,7 +64,7 @@
      * VPCs operate at the **Regional** level and you can create up to five (5) VPCs in a Region.
      * VPCs span across all AZs in a Region.
      * VPCs are logically isolated from other VPCs in the AWS Cloud.
-     * VPCs connect to the internet via an **internet gateway (IGW)** or a **virtual private network (VPN) gateway**.
+     * VPCs connect to the internet via an **internet gateway (IGW)** or a **virtual private gateway (VPG)** if connecting to a VPN.
      * A VPC provides complete control over the virtual networking environment including selection of IP addresses, creation of subnets, and configuration of routing tables and gateways.
      * When you create an AWS account, a VPC is created for you by default in all AWS Regions.
      * You have full control over who has access to the AWS resources within your VPC.
