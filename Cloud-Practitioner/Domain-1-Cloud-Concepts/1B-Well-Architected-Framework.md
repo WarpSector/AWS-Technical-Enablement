@@ -24,11 +24,11 @@
 6. **Sustainability**
    * Minimize Environmental Impact (newest pillar)
   
-**Remember: C.O.R.S.S.S.**
+**Remember: C.O.R.P.S.S.**
    * Cost Optimization
    * Operational Excellence
    * Reliability
-   * Speed (Performance Efficiency)
+   * Performance Efficiency
    * Security
    * Sustainability
 
