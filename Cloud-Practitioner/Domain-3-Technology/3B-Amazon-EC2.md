@@ -79,16 +79,20 @@
      * Auto-Scaling is what maintains **high availability** and **scales** capacity.
      * Auto-Scaling is **horizontal** (scales out).
      * Auto-Scaling is **elastic** can scale out for added capacity and can terminate instances when demand drops.
-     * Auto-Scaling can be **on-demand** or it can be **scheduled** ahead of time (you set scaling policies to define how to respond to fluctuations in demand).
-     * **Integrates with many AWS services including:**
-       * CloudWatch for monitoring and scaling (EC2 instances are constantly sending information to CloudWatch such as metrics, CPU utilization, etc.).
-       * Elastic Load Balancing (ELB) for distributing the connections and workload between different instance.
-       * EC2 Spot Instances for cost optimization.
-       * Amazon Virtual Private Cloud (VPC) for deploying instances across AZs.
+     * #### Types of Auto-Scaling:
+       * **Manual:** make changes to the ASG manually.
+       * **Dynamic:** automatically scales based on demand.
+       * **Predictive:** uses machine learning to predict when to scale.
+       * **Scheduled:** scales based on a scheduled scaling policy you set.  
+     * #### Integrates with many AWS services including:
+       * **CloudWatch** for monitoring and scaling (EC2 instances are constantly sending information to CloudWatch such as metrics, CPU utilization, etc.).
+       * **Elastic Load Balancing (ELB)** for distributing the connections and workload between different instance.
+       * **EC2 Spot Instances** for cost optimization.
+       * **Amazon Virtual Private Cloud (VPC)** for deploying instances across AZs.
    * #### Auto-Scaling Groups (ASGs)
      * Auto-Scaling Groups automatically add or terminate EC2 instances in response to demand.
      * You can define the number of instances you want to run at a steady-state in an ASG.
-     * EC2 instances are sending metrics to CloudWatch --> Depending on your auto-scaling policy, CloudWatch monitors for CPU utilization --> CloudWatch detects an auto-scaling event --> CloudWatch sends a signal to the ASG --> ASG either scales out or terminates instances based on the metrics reported by CloudWatch (ASG also signals the ELB so the ELB knows if there are additional instances to route traffic to). 
+     * EC2 instances are sending metrics to CloudWatch (known as "health checks") --> CloudWatch monitors for CPU utilization --> CloudWatch sends a signal to the ASG --> ASG either scales out or terminates instances based on the metrics reported by CloudWatch --> ASG also signals the ELB so the ELB knows if there are additional instances to route traffic to (ELBs also send "health checks" to CloudWatch and ASG).
 
 ### Amazon Machine Image (AMI)
   * #### Overview
