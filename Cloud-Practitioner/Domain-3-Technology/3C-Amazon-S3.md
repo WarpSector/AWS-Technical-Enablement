@@ -183,7 +183,7 @@
    * #### Types of Gateways:
      * **File Gateway:** gateway from on-prem to Cloud file-based storage systems.
      * **Volume Gateway:** gateway from on-prem to Cloud block-based storage systems.
-     * **Backup Gateway:** gateway from on-prem to Cloud file-based or block-based protocols via popular backup software as if it were a "tape" (but really, it's pulling objects from S3 in the Cloud).
+     * **Tape Gateway:** gateway from on-prem to Cloud file-based or block-based protocols via popular backup software as if it were a "tape" (but really, it's pulling objects from S3 in the Cloud).
     
 ### AWS Elastic Disaster Recovery Service (DRS)
    * ### AWS DRS
