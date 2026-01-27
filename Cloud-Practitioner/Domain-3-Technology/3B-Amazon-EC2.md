@@ -93,6 +93,11 @@
      * Auto-Scaling Groups automatically add or terminate EC2 instances in response to demand.
      * You can define the number of instances you want to run at a steady-state in an ASG.
      * EC2 instances are sending metrics to CloudWatch (known as "health checks") --> CloudWatch monitors for CPU utilization --> CloudWatch sends a signal to the ASG --> ASG either scales out or terminates instances based on the metrics reported by CloudWatch --> ASG also signals the ELB so the ELB knows if there are additional instances to route traffic to (ELBs also send "health checks" to CloudWatch and ASG).
+   * #### Scaling Policies
+     * **Target Tracking:** attempts to keep the instance group at or close to the targeted metric/utilization.
+     * **Simple Scaling:** adjusts the instance group size based on a specific metric.
+     * **Step Scaling:** adjusts the instance group size based on a specific metric, but the adjustments vary based on the size of the alarm breach.
+     * **Scheduled Scaling:** adjusts the instance group size at a specific time.   
 
 ### Amazon Machine Image (AMI)
   * #### Overview
