@@ -87,6 +87,14 @@
      * Public AWS resources and services still require permissions and authentication tokens to access - just because they exists outside VPCs does not mean anyone on the internet can access them.  
     
 ## Subnets
+   * #### Overview
+     * Subnets exist within VPCs and within AZs (recall VPC are Regional and can traverse AZs).
+     * Subnets are nested within AZs - they **cannot** traverse AZs.
+     * After creating a VPC, you can add one more more subnets within it.
+   * #### Types of Subnets
+     * If a subnet's traffic is routed to an IGW, it's a **public subnet**.
+     * If a subnet's traffic is **not** routed to an IGW (or is routed to a NAT Gateway), it's a **private subnet**. 
+     * If a subnet's traffic is routed to a VPG, it's a **VPN-only subnet**. 
 
 
  
