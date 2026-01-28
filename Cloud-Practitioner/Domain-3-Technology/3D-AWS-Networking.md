@@ -81,7 +81,7 @@
      * Some AWS services are only available **privately** like E2, RDS, etc.
      * Public AWS resources and services still require permissions and authentication tokens to access - just because they exists outside VPCs does not mean anyone on the internet can access them.  
     
-
+## Subnets
 
 
  
