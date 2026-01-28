@@ -76,6 +76,11 @@
      * **Route tables** are used to route traffic inside the VPC to its destination.
      * Subnets are then assigned a **subnet mask** - a subset of addresses from the VPC's CIDR Block (example: if the VPC's CIDR Block is 10.0.0.0/16, a subnet inside the VPC will have an address of 10.0.1.0/24. Another subnet will have 10.0.2.0/24. A third 10.0.3.0/24, and so on).
      * Subnets will have longer subnet masks than the VPC's CIDR block.
+   * #### VPC Peering
+     * VPCs can be connected to other VPCs via **VPC Peering**.
+     * VPC Peering is connecting two VPCs together via private IP adresses.
+     * VPC Peering is **non-transitive** meaning VPCs cannot route through other VPCs to make a connection to another VPC - all VPCs must be directly peered to be able to talk to each other.
+     * VPC Peering can be done with VPCs in different Regions and different accounts - you just need to connect them using their private IP addresses. 
    * #### Public vs. Private AWS Services
      * Some AWS services are **public** (like S3, CloudFront, Route 53, DynamoDB) - meaning they sit **outside** any VPCs and exist in the AWS Cloud itself.
      * Some AWS services are only available **privately** like E2, RDS, etc.
