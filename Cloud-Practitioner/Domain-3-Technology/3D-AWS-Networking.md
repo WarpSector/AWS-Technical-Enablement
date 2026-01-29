@@ -97,10 +97,28 @@
      * Subnets exist within VPCs and within AZs (recall VPC are Regional and can traverse AZs).
      * Subnets are nested within AZs - they **cannot** traverse AZs.
      * After creating a VPC, you can add one more more subnets within it.
-   * #### Types of Subnets
+   * #### Types of Subnets (Public vs. Private)
      * If a subnet's traffic is routed to an IGW, it's a **public subnet**.
      * If a subnet's traffic is **not** routed to an IGW (or is routed to a NAT Gateway), it's a **private subnet**. 
      * If a subnet's traffic is routed to a VPG, it's a **VPN-only subnet**. 
+
+## Firewalls
+   * #### Network Access Control Lists (NACLs or Network ACLs)
+     *  Network ACLs protect the subnet boundaries inside the VPC.
+     *  Network ACLs are layer 3 (network) security.
+     *  Network ACLs are **stateless** - they don't "remember" the traffic coming in or our, so both inbound and outbound traffic is inspected by the NACL.
+     *  Since Network ACLs are stateless, they allow you to set both allow/deny rules.
+   * #### Security Groups
+     * Security Groups protect the EC2 instances inside the subnets.
+     * Security Groups are layer 4 (transport) security.
+     * Security Groups are **stateful** - they will inspect the inbound traffic, but not inspect the same traffic leaving since it "remembers" the traffic.
+     * Since Security Groups are stateful, they allow you to set only allow rules.
+   * #### Web Application Firewalls (WAFs)
+     * WAFs protect ALBs, CloudFront, and API Gateways.
+     * WAFs are level 7 (application) security.
+     * WAFs block against cross-site scripting (XSS), SQL injection attacks, and HTTP floods.
+     * WAFs are **stateful**.
+    
 
 
  
