@@ -212,7 +212,51 @@
   * #### Overview
     * AWS Data Exchange is a platform that allows you to securely use third-party data and data products.
     * AWS Data Exchange provides access to 3,500+ data sets from 300+ third-party providers.
+  * #### Architecture
     * Data Producers and Providers publish their data sets to the AWS Data Exchange and AWS Cloud customers can subscribe to these data sets/providers.
-        * 3rd Party Data Set/Provider/Producer --> AWS Data Exchange <-- AWS User subs to their choice of set/provider via a Lambda function that calls the API endpoint of the 3rd party data set/provider.  
+        * 3rd Party Data Set/Provider/Producer --> AWS Data Exchange <-- AWS User subs to their choice of set/provider via a Lambda function that calls the API endpoint of the 3rd party data set/provider.
+  * #### Use Cases
+    * **Business Intelligence:** enhances BI and analytics.
+    * **Machine Learning:** create more effective ML models.
+    * **AWS Data Exchange for AWS Lake Formation:** subscribe directly to the 3rd party's S3 data lake.
+    * **Data APIs:** leverages AWS IAM credentialing and AWS SDKs to call data from hundreds of 3rd party providers.
+    * **Data Files:** automatically export new or updated data to your S3 buckets.
+    * **Data Tables:** discover and subscribe to 3rd party data and directly query the data in Amazon Redshift.   
 
+## Amazon Managed Streaming Service for Apache Kafka (MSK)
+  * #### Overview
+    * Amazon MSK is a fully managed service that allows you to build and runs apps that use Apache Kafka to process streaming data.
+    * Amazon MSK is used for ingesting and processing streaming data in real-time.
+    * Includes Kafka clusters, broker nodes, and zookeeper nodes.
+    * **NOTE:** Just remember for the exam that MSK works with Kafka - you don't need a deep dive into Kafka.
+   
+## Amazon Data Pipeline
+  * #### Overview
+    * Processes and moves data between different AWS compute and storage services.
+    * Saves results to S3, RDS, DnyamoDB, and EMR.
+   
+## Amazon Quicksight
+  * #### Overview
+    * Business Intelligence (BI) service.
+    * Creates and publishes interactive dashboards for ML-powered insights.
+
+ ## Amazon Neptune
+  * #### Overview
+    * Fully managed graph database service.
+
+## Amazon DocumentDB
+  * #### Overview
+    * Fully managed document database service (non-relational).
+    * Supports MongoDB workloads.
+ 
+## Amazon QLDB
+  * #### Overview
+    * Fully managed ledger database for immutable change history.
+
+## Amazon Managed Blockchain
+  * #### Overview
+    * Fully managed service for joining public and private networks using Hyperledge Fabric and Ethereum.
+ 
+
+       
 
