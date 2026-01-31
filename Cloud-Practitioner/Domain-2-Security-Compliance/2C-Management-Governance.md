@@ -14,3 +14,18 @@
 
 ## AWS Control Tower
   * #### Overview
+    * AWS Control Tower simplifies the process of creating multi-account environments.
+    * AWS Control Tower sets up security, governance, and compliance guardrails for you.
+    * Integrates with other AWS services including:
+      * AWS Organizations
+      * Organizational Units (OUs)
+      * Service Control Policies (SCPs)
+      * AWS Config
+      * AWS CloudTrail
+      * Amazon S3
+      * Amazon SNS
+      * Amazon CloudFormation
+      * AWS Service Catalog
+      * AWS SSO
+
+
