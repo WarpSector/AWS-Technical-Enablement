@@ -256,7 +256,5 @@
 ## Amazon Managed Blockchain
   * #### Overview
     * Fully managed service for joining public and private networks using Hyperledge Fabric and Ethereum.
- 
-
        
 
