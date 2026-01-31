@@ -2,6 +2,7 @@
 # (3E: Amazon Database Services)
 
 ### Executive Summary
+The Database and Analytics domain represents the transition from simple data storage to complex processing and business intelligence, utilizing both relational (RDS/Aurora) and non-relational (DynamoDB) architectures. By leveraging managed services like **Redshift** for warehousing and **Athena** for serverless queries, AWS allows for high-performance data analysis (OLAP) while offloading the "undifferentiated heavy lifting" of hardware management and scaling.
 
 ## Types of Databases
    * #### Relational Databases
@@ -258,4 +259,38 @@
   * #### Overview
     * Fully managed service for joining public and private networks using Hyperledge Fabric and Ethereum.
        
+## Summary Tables
+### 🏛️ 1. Database Type Comparison
 
+| Database Category | Key Service | Schema Type | Scaling | Best For... |
+| :--- | :--- | :--- | :--- | :--- |
+| **Relational (SQL)** | **Amazon RDS** | Rigid / Predefined | **Vertical** (Up) | Complex joins, transactional (OLTP). |
+| **Non-Relational** | **DynamoDB** | Flexible / NoSQL | **Horizontal** (Out) | High I/O, internet-scale apps. |
+| **Data Warehouse** | **Redshift** | Relational / OLAP | Horizontal | Large scale analytics (Big Data). |
+| **In-Memory** | **ElastiCache** | Key-Value | Horizontal | Microsecond latency / Caching. |
+| **Graph** | **Neptune** | Nodes & Edges | Regional | Social networks, fraud detection. |
+
+---
+
+### 🛡️ 2. The "Relational" Decision Matrix (RDS vs. Aurora)
+
+| Feature | **Amazon RDS (General)** | **Amazon Aurora (High-End)** |
+| :--- | :--- | :--- |
+| **Engines** | MySQL, Postgres, Oracle, SQL Server, MariaDB. | **MySQL and PostgreSQL only.** |
+| **Speed** | Standard performance. | **5x MySQL / 3x Postgres** speed. |
+| **Availability** | Multi-AZ (Active/Standby). | **6 copies** across 3 AZs by default. |
+| **Replicas** | Up to 5 Read Replicas. | **Up to 15 Read Replicas.** |
+| **Special** | Managed EC2/EBS backend. | **Serverless** option available. |
+
+---
+
+### 🚀 3. Analytics & Streaming Services
+
+| Service | Category | Function | Key Keyword |
+| :--- | :--- | :--- | :--- |
+| **Athena** | Query | Serverless SQL queries on **S3**. | **"Data Lake," "No Infrastructure."** |
+| **AWS Glue** | ETL | Prepares & moves data for analytics. | **"ETL," "Data Catalog," "Crawler."** |
+| **Kinesis** | Streaming | Real-time data ingestion. | **"IoT," "Stock Tickers," "Shards."** |
+| **OpenSearch** | Search | Log analytics and full-text search. | **"ELK Stack," "Dashboards," "Kibana."** |
+| **EMR** | Big Data | Managed **Hadoop/Spark** clusters. | **"Big Data Processing," "MapReduce."** |
+| **QuickSight** | BI | Interactive dashboards and ML insights. | **"Visualization," "Dashboards."** |
