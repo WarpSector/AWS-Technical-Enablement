@@ -1,6 +1,9 @@
 # Domain 3: Technology
 # (3D: Amazon Web Services Networking)
 
+### Executive Summary
+AWS Networking provides the isolated virtual environment (VPC) and global routing backbone (Route 53) necessary to securely connect users to cloud resources. It leverages a multi-layered security approach using Security Groups and Network ACLs, while utilizing global acceleration tools to minimize latency for users around the world.
+
 ## Amazon Route 53
   * ### Amazon Route 53 is the AWS Domain Name Service (DNS).
     * Recall that websites are "read" by computers as IP addresses.
