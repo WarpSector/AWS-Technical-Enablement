@@ -28,4 +28,17 @@
       * AWS Service Catalog
       * AWS SSO
 
+## AWS Systems Manager
+  * #### Overview
+    * Manages many AWs services such as EC2, S3, RDS, etc.
+    * Components of the AWS System Manager:
+      * **Automation:** uses documents to run automations.
+      * **Run Command:** allows you to run commands on EC2 instances
+      * **Inventory:** gathers inventory information
+      * **Patch Manager:** manage patching schedules and installation
+      * **Session Manager:** connect securely without using SSH or RDP
+      * **Parameter Store:** store secrets and configuration data securely      
+
+
+
 
