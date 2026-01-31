@@ -284,13 +284,21 @@ The Database and Analytics domain represents the transition from simple data sto
 
 ---
 
-### 🚀 3. Analytics & Streaming Services
+### 🚀 3. Analytics, Streaming, & Specialized Databases
 
-| Service | Category | Function | Key Keyword |
+| Service | Category | Function | Key "Exam Trigger" Keyword |
 | :--- | :--- | :--- | :--- |
-| **Athena** | Query | Serverless SQL queries on **S3**. | **"Data Lake," "No Infrastructure."** |
-| **AWS Glue** | ETL | Prepares & moves data for analytics. | **"ETL," "Data Catalog," "Crawler."** |
-| **Kinesis** | Streaming | Real-time data ingestion. | **"IoT," "Stock Tickers," "Shards."** |
-| **OpenSearch** | Search | Log analytics and full-text search. | **"ELK Stack," "Dashboards," "Kibana."** |
-| **EMR** | Big Data | Managed **Hadoop/Spark** clusters. | **"Big Data Processing," "MapReduce."** |
-| **QuickSight** | BI | Interactive dashboards and ML insights. | **"Visualization," "Dashboards."** |
+| **Amazon Athena** | Query | Serverless SQL queries on S3 data lakes. | **"SQL on S3," "No Infrastructure."** |
+| **AWS Glue** | ETL | Prepares and categorizes data for analytics. | **"ETL," "Data Catalog," "Crawl."** |
+| **Amazon Kinesis** | Streaming | Ingests and processes real-time data streams. | **"IoT," "Stock Tickers," "Real-time."** |
+| **Amazon OpenSearch**| Search | Fully managed search and log analytics suite. | **"ELK Stack," "Log Analytics," "Kibana."** |
+| **Amazon EMR** | Big Data | Managed Hadoop/Spark for big data processing. | **"Hadoop," "Spark," "MapReduce."** |
+| **Amazon QuickSight** | BI | ML-powered interactive dashboards. | **"Visualization," "Dashboards."** |
+| **Amazon MSK** | Streaming | Managed Apache Kafka clusters. | **"Kafka," "Broker Nodes."** |
+| **AWS Data Exchange** | Data Product | Marketplace for 3rd-party data sets. | **"Third-party data," "Subscribers."** |
+| **Amazon Data Pipeline**| Movement | Moves data between compute and storage. | **"Data Movement," "Scheduled Jobs."** |
+| **Amazon MemoryDB** | In-Memory | Durable, ultra-fast primary database. | **"Durable RAM," "Transaction Log."** |
+| **Amazon Neptune** | Graph | Stores and navigates data relationships. | **"Nodes & Edges," "Social Networks."** |
+| **Amazon DocumentDB** | Document | Managed MongoDB-compatible database. | **"MongoDB," "JSON-like."** |
+| **Amazon QLDB** | Ledger | Immutable, cryptographically verifiable log. | **"Ledger," "Change History," "Centralized."** |
+| **Managed Blockchain**| Decentralized| Join public or private blockchain networks. | **"Ethereum," "Hyperledger Fabric."** |
