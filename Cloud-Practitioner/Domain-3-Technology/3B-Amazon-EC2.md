@@ -138,10 +138,10 @@ Amazon EC2 provides resizable, virtualized compute capacity in the cloud, allowi
          * These are dedicated **physical** servers reserved only for you.
          * The user has control over which instances to deploy on the host, though the user can only deploy one instance size and type on the host.
          * This allows complete isolation. No one else will use the underlying server you are hosting your instances on so you can create all the VMs you want.
-         * Good for users with regulatory compliance and/or licensing requirements.
+         * Good for users with regulatory compliance and/or licensing requirements as it allows visibility into the hardware layer (to have telemetry on core sockets and host affinitiy).
          * This is the most expensive option.
       * #### Dedicated Instances:
-         * This can be Dedicated Hosts with (dedicated) instances, but without the insight into the hardware layer that you get when choosing Dedicated Hosts (insights into things like socket layers and host affinity).
+         * This is Dedicated Hosts with (dedicated) instances, but without the insight into the hardware layer that you get when choosing Dedicated Hosts (insights into things like core sockets and host affinity).
          * Billing is per instance.
       * #### Savings Plans:
          * Flexible pricing model that saves up to 72% on your AWS compute usage.
