@@ -2,55 +2,61 @@
 # (3E: Amazon Database Services)
 
 ## Types of Databases
-  * #### Relational Databases
-    * Organized by tables and rows.
-    * Has a rigid schema (MySQL).
-      * SQL is used to define the structure of the data and its elements.
-      * SQL provides the tools to insert, update, delete, and querying data within the database table.
-    * Typically scaled vertically.
-    * Supports complex queries and joins.
-    * **Examples:** Amazon RDS, MySQL, PostgresSQL, Oracle, IBM DB2.
-  * #### Non-Relational Databases
-    * Varied data storage models.
-    * Flexible schema (NoSQL).
-      * Data is stored in **key-value pairs**, columns, documents, or graphs.
-      * There is no rigid schema so attributes can be missing or have different data types.
-    * Scales horizontally.
-    * Unstructured, simple language that supports any kind of schema.
-    * **Examples:** Amazon DynamoDB, MongoDB, Redis, Neo4j.
-  * #### Graph Databases
-    * Designed to store, manage, and navigate relationships in data (e.g., Facebook).
-    * Graph databases use:
-      * Nodes to represent entities.
-      * Edges to represent relationships.
-      * Properties to store information about nodes and edges.
-    * **Example:** Amazon Neptune.  
+   * #### Relational Databases
+     * Organized by tables and rows.
+     * Has a rigid schema (MySQL).
+       * SQL is used to define the structure of the data and its elements.
+       * SQL provides the tools to insert, update, delete, and querying data within the database table.
+     * Typically scaled vertically.
+     * Supports complex queries and joins.
+     * **Examples:** Amazon RDS, MySQL, PostgresSQL, Oracle, IBM DB2.
+   * #### Non-Relational Databases
+     * Varied data storage models.
+     * Flexible schema (NoSQL).
+       * Data is stored in **key-value pairs**, columns, documents, or graphs.
+       * There is no rigid schema so attributes can be missing or have different data types.
+     * Scales horizontally.
+     * Unstructured, simple language that supports any kind of schema.
+     * **Examples:** Amazon DynamoDB, MongoDB, Redis, Neo4j.
+   * #### Graph Databases
+     * Designed to store, manage, and navigate relationships in data (e.g., Facebook).
+     * Graph databases use:
+       * Nodes to represent entities.
+       * Edges to represent relationships.
+       * Properties to store information about nodes and edges.
+     * **Example:** Amazon Neptune.  
 
 ## Use Cases for Databases
-  * #### Operational/Transactional
-    * Online Transactional Processing (OLTP).
-    * Production databases that process transactions (e.g., adding customer records, checking stock availability, etc.).
-    * Short transactions, simple queries.
-    * **Relational Examples:** Amazon RDS, My SQL, Oracle, IBM DB2.
-    * **Non-Relational Examples:** MongoDB, Cassandra, Neo4j.
-  * #### Analytical
-    * Online Analytics Processing (OLAP).
-    * The source data for OLAPs comes from OLTPs.
-    * Data warehouse - typically separated from customer facing databases - data is extracted for decision-making.
-    * Long transactions, complex queries.
-    * **Relational Examples:** Amazon Redshift, Teradata, HP Vertica.
-    * **Non-Relational Examples:** Amazon Elastic Map Reduce (EMR).
-  * #### Amazon RDS and Amazon Redshift
-    * Amazon RDS is Amazon's relational database service that ingests OLTP data (re: takes in transactional data).
-    * RDS OLTP data is then copied into Amazon Redshift (Amazon's data warehouse service).
-    * OLAP can then be performed on the OLTP data from RDS when copied into Redshift (performs data analysis, e.g., looking for trends in the data, etc.).
-  * #### Amazon Databases
-    * **Database on EC2:** full control over the database and instance, can load third-party databases that are not available in Amazon RDS.
-    * **Amazon RDS:** traditional relational database, data is well-formed and structured (includes MySQL, PostgreSQL, Oracle, etc.).
-    * **Amazon DynamoDB:** NoSQL database, dynamic scaling, useful for high I/O needs and in-memory (RAM) performance.
-    * **Amazon Redshift:** data warehouse for large volumes of aggregated data.
-    * **Amazon ElastiCache:** fast temporary storage for small amounts of data, in-memory (RAM) database.    
+   * #### Operational/Transactional
+     * Online Transactional Processing (OLTP).
+     * Production databases that process transactions (e.g., adding customer records, checking stock availability, etc.).
+     * Short transactions, simple queries.
+     * **Relational Examples:** Amazon RDS, My SQL, Oracle, IBM DB2.
+     * **Non-Relational Examples:** MongoDB, Cassandra, Neo4j.
+   * #### Analytical
+     * Online Analytics Processing (OLAP).
+     * The source data for OLAPs comes from OLTPs.
+     * Data warehouse - typically separated from customer facing databases - data is extracted for decision-making.
+     * Long transactions, complex queries.
+     * **Relational Examples:** Amazon Redshift, Teradata, HP Vertica.
+     * **Non-Relational Examples:** Amazon Elastic Map Reduce (EMR).
+   * #### Amazon RDS and Amazon Redshift
+     * Amazon RDS is Amazon's relational database service that ingests OLTP data (re: takes in transactional data).
+     * RDS OLTP data is then copied into Amazon Redshift (Amazon's data warehouse service).
+     * OLAP can then be performed on the OLTP data from RDS when copied into Redshift (performs data analysis, e.g., looking for trends in the data, etc.).
+   * #### Amazon Databases
+     * **Database on EC2:** full control over the database and instance, can load third-party databases that are not available in Amazon RDS.
+     * **Amazon RDS:** traditional relational database, data is well-formed and structured (includes MySQL, PostgreSQL, Oracle, etc.).
+     * **Amazon DynamoDB:** NoSQL database, dynamic scaling, useful for high I/O needs and in-memory (RAM) performance.
+     * **Amazon Redshift:** data warehouse for large volumes of aggregated data.
+     * **Amazon ElastiCache:** fast temporary storage for small amounts of data, in-memory (RAM) database.    
 
+ ## Data Partitions vs. Data Shards
+   * #### Data Partitions
+     * Breaking a data table into separate pieces on a single EC2 instance (vertical scaling required).
+   * ### Data Shard
+     * Breaking a data table into separate pieces across multiple EC2 instances (horizontal scaling enabled).  
+ 
  ## Amazon Relational Database (RDS)
    * #### Overview
      * **Managed** relational database.
@@ -80,7 +86,9 @@
      * Aurora Primary sits in an AZ and serves as the primary for writes, while Aurora Replicas are spread across multple AZs to serve reads (up to 15 Replicas in a Region!).
      * Fault tolerance: Aurora is spread across 3 AZs.
      * **Single Logical Volume:** Data store volume is spread across multiple AZs in the Region.
-     * Aurora has a serverless on-demand auto-scaling configuration available.  
+     * Aurora has a serverless on-demand auto-scaling configuration available.
+   * #### Amazon Limitless
+     * A new feature that allows a single SQL DB scale into millions of transactions per second!  
 
 ## Amazon DynamoDB
   * #### Overview
@@ -145,3 +153,14 @@
     * AWS Glue discovers data and stores the associated metadata in the **AWS Glue Data Catalog** (which can then be leveraged by services like Amazon Athena when running queries).
     * Works with data lakes (e.g. S3), data warehouses (e.g. Redshift), and data stores (e.g. RDS).
    
+## Amazon Kinesis
+  * #### Overview
+    * Kinesis is associated with **streaming data** (such as IoT sensors, gaming, stock tickers, geospatical data, etc.).
+    * Kinesis ingests data into data streams and then feeds into other Kinesis services.
+  * #### Amazon Kinesis Data Analytics  
+    * Data producers send data into shards for up to 7 days.
+    * Consumers process the data and store in another database.
+    * Lambda functions can store the data into other data stores or services such as DynamoDB.
+  * #### Amazon Kinesis Firehose
+    * No shards, completely automated and easily scalable.
+    * Saves data directly into another service like S3 or Redshift.
