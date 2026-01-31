@@ -54,7 +54,7 @@
  ## Data Partitions vs. Data Shards
    * #### Data Partitions
      * Breaking a data table into separate pieces on a single EC2 instance (vertical scaling required).
-   * #### Data Shard
+   * #### Data Shards
      * Breaking a data table into separate pieces across multiple EC2 instances (horizontal scaling enabled).  
  
  ## Amazon Relational Database (RDS)
@@ -167,6 +167,7 @@
 
 ## Amazon OpenSearch Service
   * #### Overview
+    * Also known as **ElasticSearch** (you may see "ElasticSearch" and "OpenSearch" used interchangeably).
     * Fully managed service for searching, visualize, and analyzing text as well as unstructured data (search and analytics suite).
     * Petabyte scale and secure, deployable to VPC, and integrates with IAM.
     * Supports SQL syntax queries.
