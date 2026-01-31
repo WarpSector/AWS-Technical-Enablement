@@ -39,6 +39,21 @@
       * **Session Manager:** connect securely without using SSH or RDP
       * **Parameter Store:** store secrets and configuration data securely      
 
+## AWS Service Catalog
+  * #### Overview
+    * Allows organizations to create and manage catalogs of IT services that are approved for use on AWS.
+    * Allows you to manage commonly deployed IT services such as VMs/EC2 images, servers, software, DBs, and mutli-tiered app architectures (microservices).
+    * Enables users to quickly deploy only the approved IT services that they need.
+
+## AWS Config
+  * #### Overview
+    * AWS Config allows you to audit the configurations of your resources and can be used for compliance reasons.
+    * Allows you to validate if your resources are configured a certain way (compares current configuration to desired configuration).
+    * Resources can report in their configuration status to AWS Config, which then records information in S3, notifies via SNS, and triggers CloudWatch events/alerts.
+    * AWS Config can also leverage Lambda functions to conduct configuration remediation to automatically configure your resources to the desired configuration state.
+   
+## 
 
 
+ 
 
