@@ -1,7 +1,7 @@
 # Domain 3: Technology
 # (3E: Amazon Database Services)
 
-## Relational Databases vs. Non-Relational Databases
+## Types of Databases
   * #### Relational Databases
     * Organized by tables and rows.
     * Has a rigid schema (MySQL).
@@ -18,8 +18,13 @@
     * Scales horizontally.
     * Unstructured, simple language that supports any kind of schema.
     * **Examples:** Amazon DynamoDB, MongoDB, Redis, Neo4j.
-       
-
+  * #### Graph Databases
+    * Designed to store, manage, and navigate relationships in data (e.g., Facebook).
+    * Graph databases use:
+      * Nodes to represent entities.
+      * Edges to represent relationships.
+      * Properties to store information about nodes and edges.
+    * **Example:** Amazon Neptune.  
 
 
 
