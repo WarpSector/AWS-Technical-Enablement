@@ -206,11 +206,26 @@
        * Developers upload their application code --> AWS Elastic Beanstalk provisions all necessary resources to run the application and scale it as necessary (re: EC2, ASG, ECS/EKS, ELB).
        * Elastic Beanstalk is **PaaS**, because you are operating at the platform level. Amazon is running the infrastructure and the platform for you, so you can focus on testing and deploying applications and code. 
 
-## Summarizing Compute Cloud
+## Summary Tables
 
-  | Category | Services | Your Mental Model |
-  | :--- | :--- | :--- |
-  | **Virtual Servers** | EC2, Lightsail | "I want a computer in the cloud." |
-  | **Containers** | ECS, EKS, Fargate | "I want to run isolated boxes (containers) of code." |
-  | **Serverless** | Lambda, Fargate | "I just want to run code; I don't care about the server." |
-  | **Automated / Batch** | Elastic Beanstalk, Batch | "I want AWS to handle the deployment or the heavy lifting." |
+### 🏛️ AWS Compute Service Type Comparison
+
+| Service | Compute Type | Management Level | Scaling Style | Primary Use Case |
+| :--- | :--- | :--- | :--- | :--- |
+| **Amazon EC2** | Virtual Machines (IaaS) | **High** (You manage OS) | Manual or ASG | Legacy apps, full OS control. |
+| **AWS Lambda** | Serverless Functions | **Zero** (No servers) | Automatic (per event) | Event-driven code, 15-min tasks. |
+| **AWS Fargate** | Serverless Containers | **Zero** (No servers) | Automatic (per task) | Microservices without managing EC2. |
+| **Amazon ECS / EKS**| Container Orchestration| **Medium** (Orchestration)| Managed Clusters | Managing thousands of Docker boxes. |
+| **Elastic Beanstalk**| Platform as a Service (PaaS)| **Low** (Upload & Run) | Automated | Rapid web app deployment. |
+| **Amazon Lightsail** | Virtual Private Server (VPS)| **Very Low** (Simple UI) | Fixed / Predictable | Small websites, blogs, dev labs. |
+| **AWS Batch** | Batch Computing | **Low** (Job-based) | Dynamic | Thousands of scientific/data jobs. |
+---
+### 🛡️ EC2 Pricing Model Comparison
+
+| Pricing Model | The "Vibe" | Best Use Case | Cost Benefit |
+| :--- | :--- | :--- | :--- |
+| **On-Demand** | Flexible & Spiky | New apps, Dev/Test, Unpredictable traffic. | No commitment; pay-per-second. |
+| **Savings Plans** | Long-term Commitment | Consistent spend across EC2, Fargate, Lambda. | **Up to 72% off** (Flexible by family/region). |
+| **Reserved (RI)** | Predictable & Steady | 24/7 databases or stable legacy apps. | Up to 75% off (Region/AZ specific). |
+| **Spot** | High-Risk / Low-Cost | Batch jobs, stateless apps, "Interruptible" work. | **Up to 90% off** (Cheapest possible option). |
+| **Dedicated Host** | Full Control | Compliance, strict licensing (e.g., bring your own). | Most expensive; physical server isolation. |
