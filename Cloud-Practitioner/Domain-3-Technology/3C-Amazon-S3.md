@@ -3,6 +3,9 @@
 
 ## Amazon Simple Storage Service (S3)
 
+### Executive Summary
+Amazon S3 is a highly durable, object-based storage service designed for "11 9's" of durability by replicating data across multiple Availability Zones. It allows for virtually unlimited storage of any file type and features diverse Storage Classes that enable users to optimize costs based on data access patterns and retention requirements.
+
 ### Storage Basics
 * **Storage is broken down into three (3) types:**
   * #### Block-Based Storage (Block):
