@@ -1,6 +1,9 @@
 # Domain 3: Technology
 # (3A: AWS Global Infrastructure)
 
+## Executive Summary
+The AWS Global Infrastructure is the physical backbone of the cloud, organized into a hierarchy of isolated Regions and redundant Availability Zones to ensure high availability and disaster recovery. Beyond the core data centers, the ecosystem extends to the "edge" through Local Zones, Wavelength, and Outposts, bringing compute and storage closer to users and on-premises environments for ultra-low latency.
+
 ## AWS Global Infrastructure (The Core)
 
 **Regions**
