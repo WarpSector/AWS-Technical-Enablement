@@ -1,5 +1,5 @@
 # Domain 3: Technology
-# (3D: Amazon Serverless Architectures)
+# (3D: Amazon Serverless Services)
 
 ## Overview
   * Amazon strongly promotes use of their serverless services such as Lambda, Fargate, DynamoDB.
@@ -10,7 +10,7 @@
 
 ## Serverless Services
   * AWS Lambda
-  * AWS Fargate ("serverless containers" - *see EC2 Compute markdown file 2B*)
+  * AWS Fargate ("serverless containers" - *see EC2 Compute markdown file 3B*)
   * Amazon Eventbridge
   * AWS Step Functions: orchestrates the components of your application.
   * Amazon Simple Queue Service (SQS)
