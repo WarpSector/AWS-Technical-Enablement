@@ -1,4 +1,4 @@
-# AWS Enablement Pathway
+# AWS Self-Enablement Pathway
 
 ## This is a repository of my study notes as I work through the AWS Certification Pathways
 
