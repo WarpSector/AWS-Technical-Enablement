@@ -1,8 +1,28 @@
 # Domain 3: Technology
 # (3A: AWS Global Infrastructure)
 
-## Executive Summary
-The AWS Global Infrastructure is the physical backbone of the cloud, organized into a hierarchy of isolated Regions and redundant Availability Zones to ensure high availability and disaster recovery. Beyond the core data centers, the ecosystem extends to the "edge" through Local Zones, Wavelength, and Outposts, bringing compute and storage closer to users and on-premises environments for ultra-low latency.
+# High-Level
+### 🏛️ 1. The Core Infrastructure: Regions & AZs
+
+| Component | Scope | Analogy | Key Characteristics |
+| :--- | :--- | :--- | :--- |
+| **Region** | Geographic Area | The "Island" | Completely isolated. Used for **Data Residency** and local compliance. |
+| **Availability Zone (AZ)** | Within a Region | The "Building" | One or more data centers. Independent failure zones (Failover). |
+| **Data Center** | Within an AZ | The "Server Room" | Redundant power/cooling. The actual physical hardware. |
+| **VPC** | Regional | The "Property Line" | Spans all AZs in a Region. Your isolated virtual network. |
+
+---
+
+### 🛡️ 2. The Edge & Hybrid Ecosystem
+
+| Service | "Vibe" | Primary Target | Pro-Tip for Feb 7 Exam |
+| :--- | :--- | :--- | :--- |
+| **Edge Location** | Content Caching | Global users (CloudFront) | **"Smallest & Most Numerous."** Used for S3/CloudFront caching. |
+| **Local Zone** | City Computing | Metro areas (e.g., NYC, LA) | **"City Edge."** High-perf compute (Gaming/Media) near users. |
+| **Wavelength** | 5G Mobile | Mobile Device users | **"Telecom Edge."** Hardware inside 5G carrier networks. |
+| **AWS Outposts** | On-Premises | Corporate Data Centers | **"The Rack."** You provide floor space; AWS provides the hardware. |
+
+# Deep Dive
 
 ## AWS Global Infrastructure (The Core)
 
@@ -137,26 +157,7 @@ graph TD
     OP_Text[On-Premises Data Center] -.-> OP
     EL_Text[Content Delivery / CloudFront] -.-> EL
 ```
-## Summary Tables
-### 🏛️ 1. The Core Infrastructure: Regions & AZs
 
-| Component | Scope | Analogy | Key Characteristics |
-| :--- | :--- | :--- | :--- |
-| **Region** | Geographic Area | The "Island" | Completely isolated. Used for **Data Residency** and local compliance. |
-| **Availability Zone (AZ)** | Within a Region | The "Building" | One or more data centers. Independent failure zones (Failover). |
-| **Data Center** | Within an AZ | The "Server Room" | Redundant power/cooling. The actual physical hardware. |
-| **VPC** | Regional | The "Property Line" | Spans all AZs in a Region. Your isolated virtual network. |
-
----
-
-### 🛡️ 2. The Edge & Hybrid Ecosystem
-
-| Service | "Vibe" | Primary Target | Pro-Tip for Feb 7 Exam |
-| :--- | :--- | :--- | :--- |
-| **Edge Location** | Content Caching | Global users (CloudFront) | **"Smallest & Most Numerous."** Used for S3/CloudFront caching. |
-| **Local Zone** | City Computing | Metro areas (e.g., NYC, LA) | **"City Edge."** High-perf compute (Gaming/Media) near users. |
-| **Wavelength** | 5G Mobile | Mobile Device users | **"Telecom Edge."** Hardware inside 5G carrier networks. |
-| **AWS Outposts** | On-Premises | Corporate Data Centers | **"The Rack."** You provide floor space; AWS provides the hardware. |
 
 
 
