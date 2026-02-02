@@ -1,8 +1,26 @@
 # Domain 2: Security and Compliance
 # (2C: AWS Cloud Management and Compliance)
 
-## Executive Summary
-The Management and Governance domain provides the "Command and Control" layer of the AWS Cloud, enabling organizations to scale from a single account to thousands while maintaining strict oversight. By centralizing account management through **AWS Organizations**, automating environment setups with **Control Tower**, and utilizing **AWS Config** for compliance auditing, businesses can ensure their infrastructure adheres to operational best practices without hindering innovation.
+# High-Level
+### 🏛️ 1. Centralized Management & Governance
+
+| Service | Primary Function | Key Architectural Hook |
+| :--- | :--- | :--- |
+| **AWS Organizations** | Centralizes management of multiple accounts. | **SCPs** and **Consolidated Billing**. |
+| **AWS Control Tower** | Sets up a secure, multi-account **Landing Zone**. | Automatic governance/security guardrails. |
+| **AWS Service Catalog** | Manages catalogs of approved IT services. | Deploy only pre-approved "stacks." |
+| **AWS Systems Manager** | Unified UI for operational management. | **Patch Manager**, **Session Manager**, **Run Command**. |
+
+### 🛡️ 2. Monitoring, Compliance & Health
+
+| Service | Purpose | Exam Keyword |
+| :--- | :--- | :--- |
+| **AWS Config** | Audits/records resource configurations. | **"Compliance Audit,"** **"Desired State."** |
+| **AWS Trusted Advisor** | Guidance for Best Practice optimization. | **"Cost/Security/Performance" checks.** |
+| **Personal Health DB** | Specific impact to YOUR account/resources. | **"Personalized view,"** **"Impacts YOU."** |
+| **Service Health DB** | Global status of all AWS services. | **"Public status,"** **"General Availability."** |
+
+# Deep Dive
 
 ## AWS Organizations
   * #### Overview
@@ -72,23 +90,6 @@ The Management and Governance domain provides the "Command and Control" layer of
     * Provides current status of AWS services.
     * NOT personalized to you.
    
-## Summary Tables
-### 🏛️ 1. Centralized Management & Governance
 
-| Service | Primary Function | Key Architectural Hook |
-| :--- | :--- | :--- |
-| **AWS Organizations** | Centralizes management of multiple accounts. | **SCPs** and **Consolidated Billing**. |
-| **AWS Control Tower** | Sets up a secure, multi-account **Landing Zone**. | Automatic governance/security guardrails. |
-| **AWS Service Catalog** | Manages catalogs of approved IT services. | Deploy only pre-approved "stacks." |
-| **AWS Systems Manager** | Unified UI for operational management. | **Patch Manager**, **Session Manager**, **Run Command**. |
-
-### 🛡️ 2. Monitoring, Compliance & Health
-
-| Service | Purpose | Exam Keyword |
-| :--- | :--- | :--- |
-| **AWS Config** | Audits/records resource configurations. | **"Compliance Audit,"** **"Desired State."** |
-| **AWS Trusted Advisor** | Guidance for Best Practice optimization. | **"Cost/Security/Performance" checks.** |
-| **Personal Health DB** | Specific impact to YOUR account/resources. | **"Personalized view,"** **"Impacts YOU."** |
-| **Service Health DB** | Global status of all AWS services. | **"Public status,"** **"General Availability."** |
  
 
