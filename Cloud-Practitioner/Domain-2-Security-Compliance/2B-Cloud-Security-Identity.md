@@ -31,7 +31,14 @@
 ## AWS Directory Service
   * ### Overview
     * A suite of products with various options for hosting a directory service in the Cloud or connecting to another directory service.
-    *   
+    * AWS Managed Microsoft Active Directory is one of such directory services you can connect to via AWS Directory Service - this is a fully managed service by AWS on AWS infrastructure.  
 
+## AD Connector
+  * ### Overview
+    * You can connect a different directory (such as MS AD) via VPN to an AD Connector.
+    * The AD Connector then connects to various AWS services.
+    * Rather than having any director service running in the Cloud, we can just connect them to the Cloud through the AD Connector.
+    * AD Connector eliminates the need for directory synchronization as well as the cost and complexity of hosting a federation structure.
+    * Connects you on-prem to AD to AWS.
 
 
