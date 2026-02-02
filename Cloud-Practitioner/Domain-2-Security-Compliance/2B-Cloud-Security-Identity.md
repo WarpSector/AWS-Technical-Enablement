@@ -1,6 +1,40 @@
 # Domain 2: Security and Compliance
 # (2B: Cloud Security and Identity)
 
+# High-Level
+### 🛡️ AWS Security & Governance Master Table
+
+| Service | Category | Core Mnemonic |
+| :--- | :--- | :--- |
+| **CloudTrail** | Auditing | **"Who did what?"** (API Log) |
+| **CloudWatch** | Monitoring | **"How is it performing?"** (Metrics) |
+| **Config** | Compliance | **"Is the config correct?"** (History) |
+| **Artifact** | Compliance | **"Show me the certificates"** (SOC/PCI) |
+| **RAM** | Resource | **"Share resources, not users"** (VPC Subnets) |
+| **Security Hub** | Dashboard | **"The Central Command Center"** (Aggregator) |
+
+---
+
+### 🔑 Encryption & Secrets Cheat Sheet
+* **KMS:** Managed Service, Shared Hardware (FIPS 140-2 L2).
+* **CloudHSM:** Dedicated Hardware, Customer Managed (FIPS 140-2 L3).
+* **Secrets Manager:** Rotates keys automatically (e.g., RDS passwords).
+* **Parameter Store:** Stores plain text or encrypted strings (cheaper).
+
+### 🚨 Threat Detection Timeline
+1. **Inspector:** Scans for unpatched software (EC2/Lambda/ECR).
+2. **GuardDuty:** Uses ML to find "weird" behavior (API/DNS/VPC Logs).
+3. **Detective:** Investigates a GuardDuty finding to find the "Why."
+4. **Macie:** Finds Social Security numbers (PII) in S3.
+
+### 🛑 DDoS & Firewalls
+* **WAF:** Blocks specific bad requests (Layer 7).
+* **Shield Standard:** Free DDoS protection for everyone.
+* **Shield Advanced:** $3,000/mo, DDoS insurance, 24/7 Support.
+* **Firewall Manager:** Manages WAF/Shield rules across **Multi-Accounts**.
+
+# Deep Dive
+
 ## Identity Federation
   * ### Overview
     * Ultimately, identity federation is **single sign-on (SSO)** for the Cloud.
