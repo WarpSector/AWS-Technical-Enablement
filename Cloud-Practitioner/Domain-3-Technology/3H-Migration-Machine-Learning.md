@@ -35,3 +35,23 @@
     * #### Snowcone
       * Small device used for edge computing, storage and data transfer.
       * Can transfer data offline or online with AWS DataSync agents.       
+
+## Artificial Intelligence --> Machine Learning --> Deep Learning
+  * ### Overview
+    * #### Artificial Intelligence (AI)
+      * A broad field where intelligent systems are capable of performing human-like tasks.
+    * #### Machine Learning (ML)
+      * A type of AI used for training machines to perform complex tasks without explicit instructions.
+      * ML "training" feeds data into the machine to **find patterns** hidden in the data, which produces a **MODEL**.
+      * The model can then be trained on other data sets to make predictions or decisions based on the patterns it leared. 
+  * ### Amazon Rekognition
+    *  
+  * ### Amazon Transcribe
+  * ### Amazon Translate
+  * ### Amazon Comprehend
+  * ### Amazon Lex
+  * ### Amazon Polly
+  * ### Amazon SageMaker
+  * ### Amazon Bedrock
+  * ### Amazon DevOps Guru
+  * ### Amazon CodeGuru Security
