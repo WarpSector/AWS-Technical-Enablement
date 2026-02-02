@@ -179,6 +179,11 @@
       * Hosting of Objectional or Copyrighted Content
       * Distributing Malware  
 
+## Penetration Testing
+  * ### Overview
+    * Penetration testing is the practice of testing one's own application's security for vulnerabilities by simulating an attack.
+    * AWS allows penetration testing without prior approval for 8 AWS services (just remember you cannot simulate DDoS attacks or any attacks involving DNS). 
+
 ## AWS Resource Access Manager (RAM)
   * ### Overview
     * RAM allows you to share specific AWS resources across different AWS accounts within your Organization.
@@ -186,5 +191,10 @@
     * This saves money and simplifies networking.
     * Users who have resources shared WITH them cannot modify those resources.
    
-
+## AWS Artifact
+  * ### Overview
+    * Provides on-demand access to AWS's security and compliance reports as well as select online agreements
+    * Reports available in AWS Artifact include:
+      * Service Organizaton Control (SOC) Reports
+      * Payment Card Industry (PCI) Reports  
 
