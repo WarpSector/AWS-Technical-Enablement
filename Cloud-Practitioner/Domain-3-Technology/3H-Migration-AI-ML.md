@@ -43,12 +43,7 @@
     * #### Machine Learning (ML)
       * A type of AI used for training machines to perform complex tasks without explicit instructions.
       * ML "training" feeds data into the machine to **find patterns** hidden in the data, which produces a **MODEL**.
-      * The model can then be trained on other data sets to make predictions or decisions based on the patterns it learned.
-      * **Common Use Cases for ML Models:**
-        * Predict trends (e.g., stock prices)
-        * Make decisions (e.g., routing callers to departments)
-        * Detect anomalies (e.g., bank fraud)
-        * AI services (e.g., pre-built models already trained)
+      * The model can then be trained on other data sets to make predictions or decisions based on the patterns it learned (see below).
        
 ```mermaid
 %%{init: {'theme': 'base', 'themeVariables': { 'primaryColor': '#ffffff', 'edgeLabelBackground':'#ffffff', 'tertiaryColor': '#f0f0f0'}}}%%
@@ -93,8 +88,40 @@ graph LR
     class Model_Node diamondStyle;
 linkStyle 0,1,2,3,4 stroke:#fff,stroke-width:2px;
 ```
+   * #### Common Use Cases for ML Models:
+     * Predict trends (e.g., stock prices)
+     * Make decisions (e.g., routing callers to departments)
+     * Detect anomalies (e.g., bank fraud)
+     * AI services (e.g., pre-built models already trained)
+   * #### AWS AI/ML 3-Tiers:
+     * **Tier 1:** pre-built models already trained (re: AI services)
+     * **Tier 2:** ML services like **SageMaker AI** (build/train/deploy custom MLs)
+     * **Tier 3:** ML frameworks (completely customized model building with popular ML frameworks) 
 
-      
+```mermaid
+%%{init: {'theme': 'base', 'themeVariables': { 'primaryColor': '#ffffff', 'edgeLabelBackground':'#ffffff', 'tertiaryColor': '#f0f0f0'}}}%%
+graph LR
+    %%---Defining Nodes & Shapes---%%
+    Tier1[Tier 1: Pre-Built]
+    Tier2((Tier 2: Managed))
+    Tier3{Tier 3: Highly Customized}
+
+    %%---Defining Connections---%%
+    Tier1 ===> Tier2
+    Tier2 ===> Tier3
+
+    %%---Grayscale Styling---%%
+    classDef squareStyle fill:#f0f0f0,stroke:#333,stroke-width:2px,color:#000,font-weight:bold;
+    classDef circleStyle fill:#ffffff,stroke:#000,stroke-width:2px,color:#000,font-weight:bold;
+    classDef diamondStyle fill:#e0e0e0,stroke:#000,stroke-width:2px,color:#000,font-weight:bold;
+
+    class Tier1 squareStyle;
+    class Tier2 circleStyle;
+    class Tier3 diamondStyle;
+
+    %%---White Arrow Styling---%%
+    linkStyle 0,1 stroke:#fff,stroke-width:3px;
+  ``` 
   * ### Amazon Rekognition
     *  
   * ### Amazon Transcribe
