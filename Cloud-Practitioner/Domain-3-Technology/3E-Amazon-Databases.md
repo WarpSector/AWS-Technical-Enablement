@@ -1,8 +1,51 @@
 # Domain 3: Technology
 # (3E: Amazon Database Services)
 
-### Executive Summary
-The Database and Analytics domain represents the transition from simple data storage to complex processing and business intelligence, utilizing both relational (RDS/Aurora) and non-relational (DynamoDB) architectures. By leveraging managed services like **Redshift** for warehousing and **Athena** for serverless queries, AWS allows for high-performance data analysis (OLAP) while offloading the "undifferentiated heavy lifting" of hardware management and scaling.
+# High-Level
+### 🏛️ 1. Database Type Comparison
+
+| Database Category | Key Service | Schema Type | Scaling | Best For... |
+| :--- | :--- | :--- | :--- | :--- |
+| **Relational (SQL)** | **Amazon RDS** | Rigid / Predefined | **Vertical** (Up) | Complex joins, transactional (OLTP). |
+| **Non-Relational** | **DynamoDB** | Flexible / NoSQL | **Horizontal** (Out) | High I/O, internet-scale apps. |
+| **Data Warehouse** | **Redshift** | Relational / OLAP | Horizontal | Large scale analytics (Big Data). |
+| **In-Memory** | **ElastiCache** | Key-Value | Horizontal | Microsecond latency / Caching. |
+| **Graph** | **Neptune** | Nodes & Edges | Regional | Social networks, fraud detection. |
+
+---
+
+### 🛡️ 2. The "Relational" Decision Matrix (RDS vs. Aurora)
+
+| Feature | **Amazon RDS (General)** | **Amazon Aurora (High-End)** |
+| :--- | :--- | :--- |
+| **Engines** | MySQL, Postgres, Oracle, SQL Server, MariaDB. | **MySQL and PostgreSQL only.** |
+| **Speed** | Standard performance. | **5x MySQL / 3x Postgres** speed. |
+| **Availability** | Multi-AZ (Active/Standby). | **6 copies** across 3 AZs by default. |
+| **Replicas** | Up to 5 Read Replicas. | **Up to 15 Read Replicas.** |
+| **Special** | Managed EC2/EBS backend. | **Serverless** option available. |
+
+---
+
+### 🚀 3. Analytics, Streaming, & Specialized Databases
+
+| Service | Category | Function | Key "Exam Trigger" Keyword |
+| :--- | :--- | :--- | :--- |
+| **Amazon Athena** | Query | Serverless SQL queries on S3 data lakes. | **"SQL on S3," "No Infrastructure."** |
+| **AWS Glue** | ETL | Prepares and categorizes data for analytics. | **"ETL," "Data Catalog," "Crawl."** |
+| **Amazon Kinesis** | Streaming | Ingests and processes real-time data streams. | **"IoT," "Stock Tickers," "Real-time."** |
+| **Amazon OpenSearch**| Search | Fully managed search and log analytics suite. | **"ELK Stack," "Log Analytics," "Kibana."** |
+| **Amazon EMR** | Big Data | Managed Hadoop/Spark for big data processing. | **"Hadoop," "Spark," "MapReduce."** |
+| **Amazon QuickSight** | BI | ML-powered interactive dashboards. | **"Visualization," "Dashboards."** |
+| **Amazon MSK** | Streaming | Managed Apache Kafka clusters. | **"Kafka," "Broker Nodes."** |
+| **AWS Data Exchange** | Data Product | Marketplace for 3rd-party data sets. | **"Third-party data," "Subscribers."** |
+| **Amazon Data Pipeline**| Movement | Moves data between compute and storage. | **"Data Movement," "Scheduled Jobs."** |
+| **Amazon MemoryDB** | In-Memory | Durable, ultra-fast primary database. | **"Durable RAM," "Transaction Log."** |
+| **Amazon Neptune** | Graph | Stores and navigates data relationships. | **"Nodes & Edges," "Social Networks."** |
+| **Amazon DocumentDB** | Document | Managed MongoDB-compatible database. | **"MongoDB," "JSON-like."** |
+| **Amazon QLDB** | Ledger | Immutable, cryptographically verifiable log. | **"Ledger," "Change History," "Centralized."** |
+| **Managed Blockchain**| Decentralized| Join public or private blockchain networks. | **"Ethereum," "Hyperledger Fabric."** |
+
+# Deep Dive
 
 ## Types of Databases
    * #### Relational Databases
@@ -259,46 +302,4 @@ The Database and Analytics domain represents the transition from simple data sto
   * #### Overview
     * Fully managed service for joining public and private networks using Hyperledge Fabric and Ethereum.
        
-## Summary Tables
-### 🏛️ 1. Database Type Comparison
 
-| Database Category | Key Service | Schema Type | Scaling | Best For... |
-| :--- | :--- | :--- | :--- | :--- |
-| **Relational (SQL)** | **Amazon RDS** | Rigid / Predefined | **Vertical** (Up) | Complex joins, transactional (OLTP). |
-| **Non-Relational** | **DynamoDB** | Flexible / NoSQL | **Horizontal** (Out) | High I/O, internet-scale apps. |
-| **Data Warehouse** | **Redshift** | Relational / OLAP | Horizontal | Large scale analytics (Big Data). |
-| **In-Memory** | **ElastiCache** | Key-Value | Horizontal | Microsecond latency / Caching. |
-| **Graph** | **Neptune** | Nodes & Edges | Regional | Social networks, fraud detection. |
-
----
-
-### 🛡️ 2. The "Relational" Decision Matrix (RDS vs. Aurora)
-
-| Feature | **Amazon RDS (General)** | **Amazon Aurora (High-End)** |
-| :--- | :--- | :--- |
-| **Engines** | MySQL, Postgres, Oracle, SQL Server, MariaDB. | **MySQL and PostgreSQL only.** |
-| **Speed** | Standard performance. | **5x MySQL / 3x Postgres** speed. |
-| **Availability** | Multi-AZ (Active/Standby). | **6 copies** across 3 AZs by default. |
-| **Replicas** | Up to 5 Read Replicas. | **Up to 15 Read Replicas.** |
-| **Special** | Managed EC2/EBS backend. | **Serverless** option available. |
-
----
-
-### 🚀 3. Analytics, Streaming, & Specialized Databases
-
-| Service | Category | Function | Key "Exam Trigger" Keyword |
-| :--- | :--- | :--- | :--- |
-| **Amazon Athena** | Query | Serverless SQL queries on S3 data lakes. | **"SQL on S3," "No Infrastructure."** |
-| **AWS Glue** | ETL | Prepares and categorizes data for analytics. | **"ETL," "Data Catalog," "Crawl."** |
-| **Amazon Kinesis** | Streaming | Ingests and processes real-time data streams. | **"IoT," "Stock Tickers," "Real-time."** |
-| **Amazon OpenSearch**| Search | Fully managed search and log analytics suite. | **"ELK Stack," "Log Analytics," "Kibana."** |
-| **Amazon EMR** | Big Data | Managed Hadoop/Spark for big data processing. | **"Hadoop," "Spark," "MapReduce."** |
-| **Amazon QuickSight** | BI | ML-powered interactive dashboards. | **"Visualization," "Dashboards."** |
-| **Amazon MSK** | Streaming | Managed Apache Kafka clusters. | **"Kafka," "Broker Nodes."** |
-| **AWS Data Exchange** | Data Product | Marketplace for 3rd-party data sets. | **"Third-party data," "Subscribers."** |
-| **Amazon Data Pipeline**| Movement | Moves data between compute and storage. | **"Data Movement," "Scheduled Jobs."** |
-| **Amazon MemoryDB** | In-Memory | Durable, ultra-fast primary database. | **"Durable RAM," "Transaction Log."** |
-| **Amazon Neptune** | Graph | Stores and navigates data relationships. | **"Nodes & Edges," "Social Networks."** |
-| **Amazon DocumentDB** | Document | Managed MongoDB-compatible database. | **"MongoDB," "JSON-like."** |
-| **Amazon QLDB** | Ledger | Immutable, cryptographically verifiable log. | **"Ledger," "Change History," "Centralized."** |
-| **Managed Blockchain**| Decentralized| Join public or private blockchain networks. | **"Ethereum," "Hyperledger Fabric."** |
