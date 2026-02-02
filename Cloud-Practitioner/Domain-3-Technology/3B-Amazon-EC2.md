@@ -232,3 +232,28 @@ Amazon EC2 provides resizable, virtualized compute capacity in the cloud, allowi
 | **Reserved (RI)** | Predictable & Steady | 24/7 databases or stable legacy apps. | Up to 75% off (Region/AZ specific). |
 | **Spot** | High-Risk / Low-Cost | Batch jobs, stateless apps, "Interruptible" work. | **Up to 90% off** (Cheapest possible option). |
 | **Dedicated Host** | Full Control | Compliance, strict licensing (e.g., bring your own). | Most expensive; physical server isolation. |
+
+---
+
+### 🏗️ Resilience Deep Dive: High Availability (HA) vs. Fault Tolerance (FT)
+
+**Core Philosophy:** In the cloud, we don't try to prevent failure; we architect to survive it. High Availability is about **recovering fast**, while Fault Tolerance is about **never stopping.**
+
+| Feature | High Availability (HA) | Fault Tolerance (FT) |
+| :--- | :--- | :--- |
+| **User Experience** | A brief "hiccup" or refresh (seconds). | **Zero disruption** (invisible to the user). |
+| **Mechanism** | **Self-healing** (ASG) + **Failover** (ALB). | **Active-Active** redundancy (1:1 duplicates). |
+| **Design Goal** | Resilience via **Automated Recovery**. | Resilience via **Total Redundancy**. |
+| **Infrastructure** | Usually **Multi-AZ** (Single Region). | Often **Multi-Region** (Global). |
+| **Cost** | Efficient (Pay for what you need). | **Expensive** (Paying for 2x everything). |
+| **Analogy** | A car with a **spare tire** in the trunk. | A car with **dual engines** running at once. |
+
+---
+
+### 🛡️ The "Failure" Decision Matrix
+
+* **Self-Healing (ASG):** The system detects a failed instance and replaces it. (Maintains *Quantity*).
+* **Failover (ALB/Route 53):** The system detects an unhealthy path and reroutes traffic. (Maintains *Connectivity*).
+* **Fault Tolerance:** The system has no single point of failure; if one half dies, the other half is already processing the load. (Maintains *Continuity*).
+
+**Exam Tip:** If the question mentions **"Zero Downtime"** or **"Mission Critical,"** lean toward Fault Tolerance. If it mentions **"Minimize Downtime"** or **"Cost-effective,"** lean toward High Availability.
