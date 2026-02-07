@@ -8,4 +8,7 @@
 * Q1 - Q2 2026: AWS AI Practitioner Foundational
 * Q2 - Q3 2026: AWS Solutions Architect Associate
 
-**Current Status: Working towards AWS Cloud Practitioner**
+**Current Status:**
+  * 02.07.26 - Passed AWS Cloud Practitioner Exam
+  * 02.07.26 - Preparing for AWS AI Practitioner Exam (proposed exam date 02.22.26)
+
