@@ -4,7 +4,7 @@
 
 **Current Goal(s)**
 
-* Q1 2026: AWS Cloud Practitioner Foundational
+* **COMPLETED:** Q1 2026: AWS Cloud Practitioner Foundational
 * Q1 - Q2 2026: AWS AI Practitioner Foundational
 * Q2 - Q3 2026: AWS Solutions Architect Associate
 
