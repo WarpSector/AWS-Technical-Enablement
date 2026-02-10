@@ -1,6 +1,37 @@
 # Domain 1: Fundamentals of Machine Learning (ML) and Artificial Intelligence (AI)
 # (1B: Traditional Methods vs. Artificial Intelligence Methods for Problem-Solving)
 
+# High-Level Overview
+## Table 1: Traditional vs. AI/ML Comparison
+| Feature | Traditional Methods (Code) | AI/ML Methods |
+| :--- | :--- | :--- |
+| **Logic Basis** | Human-defined, rule-based systems. | Patterns learned from data. |
+| **Outcome Type** | Exact, deterministic results. | Probabilistic predictions. |
+| **Scaling** | Difficult to scale complex, overlapping rules. | Highly effective at handling large-scale problems. |
+| **Best Used When** | Rules are clear and logic is fixed. | You cannot manually code the rules. |
+
+---
+
+## Table 2: Cost & Resource Breakdown
+| Cost Category | Key Considerations | Impact on Project |
+| :--- | :--- | :--- |
+| **Human Resources** | Data Scientists' time is costly and limited. | High: Affects development time and time-to-market. |
+| **Hardware** | High-performance hardware vs. cost-effective options. | Moderate: Limits experimentation speed if under-provisioned. |
+| **Data Labeling** | Necessary for supervised learning; costs scale with data size. | High: Significant expense for large datasets. |
+| **Hidden Costs** | Iterative re-training due to bias; hosting & maintenance. | Variable: Increases financial and time investment over time. |
+
+---
+
+## Table 3: Implementation "Go/No-Go" Checklist
+| Step | Action Item | Goal |
+| :--- | :--- | :--- |
+| **1. Articulate** | Clearly define objectives and expected outcomes. | Alignment with business needs. |
+| **2. Assess** | Identify relevant data sources and check data quality. | Ensure ML is actually feasible. |
+| **3. Analyze** | Perform trade-off analysis (Custom vs. Pre-trained). | Cost-optimization (Pre-trained is usually cheaper). |
+| **4. Verify** | Ask: "Is ML outperforming existing methods?". | Avoid adding unnecessary complexity. |
+
+---
+
 ## Decision Flowchart for Using AI/ML or Using Standard Rules & Coding
 ```mermaid
 graph TD
@@ -14,6 +45,8 @@ graph TD
     G --> H[Check: Is ML outperforming existing methods?]
 ```
 ---
+
+# Deep Dive
 
 ## The Axioms
 ### Do you need ML to solve this problem or can you solve it using traditional code?
