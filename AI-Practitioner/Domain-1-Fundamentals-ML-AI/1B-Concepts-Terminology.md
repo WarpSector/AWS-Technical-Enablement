@@ -68,8 +68,8 @@ graph LR
     SM --- EC2
     EC2 --> Model[(Amazon S3: <br/>model.tar.gz)]
     
-    style EC2 fill:#f96,stroke:#333,stroke-width:2px
-    style Model fill:#bbf,stroke:#333,stroke-width:2px
+    style EC2 fill:#f96,stroke:#333,stroke-width:2px, color:#000
+    style Model fill:#bbf,stroke:#333,stroke-width:2px, color:#000
 ```
 ### Inferencing
   * Model is deployed into the *real world* --> Applied to New Data (SageMaker Real-Time Endpoint or done severless via Amazon Bedrock) --> Model makes Predicitions/Decisions (these can be logged into CloudWatch)
@@ -86,8 +86,8 @@ graph LR
         Deploy --> CW[Amazon CloudWatch: <br/>Logs & Metrics]
     end
 
-    style Deploy fill:#f96,stroke:#333,stroke-width:2px
-    style Preds fill:#bbf,stroke:#333,stroke-width:2px
+    style Deploy fill:#f96,stroke:#333,stroke-width:2px, color:#000
+    style Preds fill:#bbf,stroke:#333,stroke-width:2px, color:#000
 ```
 
 ## Fit
