@@ -47,7 +47,49 @@
   * **Examples:**
     * *Training:* Feeding the model thousands of customer purchase histories to help it learn what factors lead to a sale.
     * *Inference:* Using the trained model to predict if a new customer will make a purchase based on their browsing history.
-        
+
+## Mapping the Model to AWS
+### Training  
+  * Historical Data (CSV/JSON/Images) stored on Amazon S3 --> Fed into Algorithm (Instructions that "live" in a container image, so ECR) --> Computer (Amazon EC2 + Amazon SageMaker: SageMaker takes the S3 data and the dockerized algorithm from ECR and puts them together on an EC2 instance (specifically P4 or P5 instances)) = Model (saved in an S3 bucket as a model.tar.gz file)
+```mermaid
+graph LR
+    subgraph Data_Storage [Data & Code]
+        S3_Hist[(Amazon S3: <br/>Historical Data)] 
+        ECR[Amazon ECR: <br/>Docker Algorithm Image]
+    end
+
+    subgraph SageMaker_Training [SageMaker Training Jobs]
+        SM[Amazon SageMaker]
+        EC2[Amazon EC2: <br/>P4/P5 GPU Instances]
+    end
+
+    S3_Hist --> SM
+    ECR --> SM
+    SM --- EC2
+    EC2 --> Model[(Amazon S3: <br/>model.tar.gz)]
+    
+    style EC2 fill:#f96,stroke:#333,stroke-width:2px
+    style Model fill:#bbf,stroke:#333,stroke-width:2px
+```
+### Inferencing
+  * Model is deployed into the *real world* --> Applied to New Data (SageMaker Real-Time Endpoint or done severless via Amazon Bedrock) --> Model makes Predicitions/Decisions (these can be logged into CloudWatch)
+```mermaid
+graph LR
+    Model[(Amazon S3: <br/>model.tar.gz)] --> Deploy[SageMaker Hosting]
+    
+    subgraph Real_World [Real-World Application]
+        NewData[New Input Data] --> Deploy
+        Deploy --> Preds{Predictions / <br/>Decisions}
+    end
+
+    subgraph Monitoring
+        Deploy --> CW[Amazon CloudWatch: <br/>Logs & Metrics]
+    end
+
+    style Deploy fill:#f96,stroke:#333,stroke-width:2px
+    style Preds fill:#bbf,stroke:#333,stroke-width:2px
+```
+
 ## Fit
 ### Explanation
   * **What is** ***Fit***?
