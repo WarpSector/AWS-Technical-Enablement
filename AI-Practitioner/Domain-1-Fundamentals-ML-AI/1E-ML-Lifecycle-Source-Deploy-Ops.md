@@ -48,7 +48,7 @@
 ### Step 5: Engineer Features
   * Create new features to *improve model performance*, selecting and extracting relevant variables.
   * **Amazon SageMaker Data Wrangler** facilitates the creation of new features.
-  * **Amazon SageMaker Feature Store** provides a centralize repository to create, store, and manage features for use in both model training and real-time inference.
+  * **Amazon SageMaker Feature Store** provides a centralized repository to create, store, and manage features for use in both model training and real-time inference.
 
 ### Step 6: Train, Tune Evaluate
   * *Develop* and *fine-tune* the model using the training data and evaluate its performance.
