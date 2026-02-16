@@ -175,6 +175,52 @@ graph TD
     * Your business requires complete control and optimization of the model.   
 
 ## Deploying ML Models
-
+#### There are two (2) main approaches to deploying ML models in AWS:
+ * Managed API Services
+ * Self-Hosted APIs
+### Managed API Services
+#### Overview
+ * These are fully managed services that provide **pre-trained** models through APIs.
+ * Examples: Amazon Rekognition for image and video analysis (object detection, facial recognition) & Amazon Bedrock for NLP.
+#### Advantages of using Managed API Services
+ * **Easy Integration & Rapid Deployment**
+   * You can quickly add AI capabilities to your app with minimal setup.
+ * **Fully Managed Infrastructure**
+   * You do not need to provision and manage servers, scale them, or update them - this is all managed by AWS.
+ * **Auto-Scaling and High Availability**
+   * Your infrastructure to run the AI solution will scale automatically and is architected to handle various workloads.
+ * **Regular Updates**
+   * You will receive access to the latest models and improvements without requiring additional work or effort.
+ * **Pre-Trained Models**
+   * You will have access to and utilize powerful pre-trained models for common AI tasks.
+ * **Pay-as-you-Go Pricing**
+   * No upfront costs and you will only pay for what you use.
+ * **Built-In Security**
+   * Compliance-ready security features like encryption is included with fully managed AI services.
+ * **Use Cases**
+   * Quick implementation for projects that require standard AI capabilities such as image analysis or text processing.
+   * Scalable with your applications without the need for provisioning and managing the underlying infrastructure yourself.
+   * Integration is seamless with other AWS services such as S3 for storage and Lambda for event-driven architectures and processing.
+### Self-Hosted APIs
+#### Overview
+ * Self-hosted APIs for AI uses **Amazon SageMaker** to build, train, and deploy custom ML models on your infrastructure.
+ * **Amazon SageMaker Jumpstart** is a feature within SageMaker (similar to DataWrangler) that offers pre-built models and solutions, which simplifies the process of self-hosting.
+#### Advantages of using Self-Hosted APIs
+ * **Customization and Control**
+   * You can fine-tune the models you create along with the underlying infrastructure to meet specific needs.
+ * **Model Flexibility**
+   * You have the ability to choose and modify the ML frameworks and algorithms you're using to build your AI solution.
+ * ** Cost Optimization**
+   * By controlling resource allocation, you can potentially reduce costs associated with high-volume usage (re: setting limits, etc.).
+ * **Enhanced Data Privacy**
+   * You have greater control over sensitive data because you are self-hosting the API, making this solution ideal for projects with strict privacy requirements.
+ * **Use Cases**
+   * Need for suitable proprietary models that can be significantly customized.
+   * Need for specific performance requirements, strict latency needs, or optimizations.
+   * Need for full controls - the entire ML pipeline needs to be monitored and controlled by you.   
+#### Features of Self-Hosted APIs
+ * Support for various ML frameworks is available allowing you to leverage a wide range of frameworks to tailor to your specific use case.
+ * You have flexibile deployment options since you are using SageMaker for real-time inference and/or batch processing.
+ * Integrates with AWS services for monitoring, logging, and security (CloudWatch).
 
 
