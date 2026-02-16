@@ -14,6 +14,43 @@
 | **7** | **Deploy** | Launch for real-time or batch predictions. | **SageMaker Serverless Inference** |
 | **8** | **Monitor** | Track for performance anomalies and bias. | **SageMaker Model Monitor** |
 
+## Machine Learning Lifecycle Visual Flow
+```mermaid
+graph TD
+    %% Nodes outside the process box
+    Goal[1. Identify Business Goal] --> Frame[2. Frame ML Problem]
+    
+    %% Explicitly connect Frame to the start of the subgraph
+    Frame --> Collect
+
+    %% Subgraph for Data Processing Callout (Strictly 3-5)
+    subgraph Process_Data ["Process Data Phase"]
+        direction TB
+        Collect[3. Collect Data] --> Pre[4. Pre-Process Data]
+        Pre --> Eng[5. Engineer Features]
+    end
+
+    %% Connect out of the subgraph
+    Eng --> Train[6. Train, Tune, Evaluate]
+    Train --> Deploy[7. Deploy]
+    Deploy --> Monitor[8. Monitor]
+
+    %% Feedback Loop
+    Monitor -.-> |Insights for Improvement| Goal
+
+    %% Node Styling
+    style Goal fill:#f9f,stroke:#333,stroke-width:2px,color:#000
+    style Train fill:#f96,stroke:#333,stroke-width:2px,color:#000
+    style Deploy fill:#f96,stroke:#333,stroke-width:2px,color:#000
+    style Monitor fill:#bbf,stroke:#333,stroke-width:2px,color:#000
+    style Frame fill:#eee,stroke:#333,color:#000
+    style Collect fill:#eee,stroke:#333,color:#000
+    style Pre fill:#eee,stroke:#333,color:#000
+    style Eng fill:#eee,stroke:#333,color:#000
+
+    %% Subgraph Callout Styling
+    style Process_Data fill:#eeeeee,stroke:#1890ff,stroke-width:2px,stroke-dasharray: 5 5,color:#000
+```
 ---
 
 ## Table 2: AWS Service Quick Reference
@@ -24,6 +61,120 @@
 | **Amazon SageMaker** | Training, Tuning, Evaluation, Deployment | General-purpose model development and hosting. |
 | **SageMaker Model Monitor** | Monitoring | Tracking real-time performance, bias, and anomalies. |
 | **Serverless Inference** | Deployment | Deploying models without managing infrastructure. |
+
+---
+
+## Table 3: Sources of ML Models
+### This table breaks down the "Build vs. Buy" decision for AI.
+| Model Source | Pros | Cons | Best Used For | AWS Examples |
+| :--- | :--- | :--- | :--- | :--- |
+| **AWS Pre-Trained** | Fully managed, fast deployment, highly sustainable. | Limited to built-in, generic use cases. | Quick solutions for common tasks (e.g., text translation). | Amazon Rekognition, Bedrock. |
+| **Open-Source** | Cost-effective, customizable via fine-tuning. | Might not fit highly niche business needs. | Standard tasks needing minor custom tweaks. | SageMaker JumpStart (Hugging Face). |
+| **Custom Models** | Highly flexible, full control over optimization. | High cost, time-consuming, requires ML expertise. | Unique, complex business problems. | Amazon SageMaker (End-to-End). |
+
+## "Build vs. Buy" Decision Tree
+```mermaid
+graph TD
+    Start[Business Problem Identified] --> Q1{Is it a standard task?}
+
+    Q1 -- Yes --> Q2{Need customization?}
+    Q2 -- No --> Managed[<b>AWS Pre-Trained</b><br/>Amazon Rekognition<br/>Fastest & Most Sustainable]
+    Q2 -- Yes --> OS[<b>Open-Source</b><br/>SageMaker JumpStart<br/>Cost-effective & Flexible]
+
+    Q1 -- No --> Custom[<b>Custom Model</b><br/>Amazon SageMaker<br/>Maximum Control & Precision]
+
+    %% Styling
+    style Start fill:#eee,stroke:#333,stroke-width:2px,color:#000
+    style Q1 fill:#eee,stroke:#333,color:#000
+    style Q2 fill:#eee,stroke:#333,color:#000
+    
+    style Managed fill:#eeeeee,stroke:#333,color:#000
+    style OS fill:#eeeeee,stroke:#333,color:#000
+    style Custom fill:#f96,stroke:#333,color:#000
+```
+
+---
+
+## Table 4: Deploying ML Models
+### This highlights the infrastructure trade-offs once a model is ready for the real world.
+| Deployment Approach | Infrastructure | Key Advantages | Best Used For |
+| :--- | :--- | :--- | :--- |
+| **Managed API Services** | Fully managed by AWS; Auto-scaling included. | Rapid deployment, pay-as-you-go, built-in security. | Quick implementation of standard capabilities. |
+| **Self-Hosted APIs** | Managed by you via SageMaker. | Maximum control, cost optimization for high-volume, data privacy. | Proprietary models with strict privacy/latency needs. |
+
+## Deployment Visual Flow
+```mermaid
+graph TD
+    Title[ML Model Deployment Strategies]
+
+    subgraph Managed ["Managed API Services"]
+        direction TB
+        M1["<b>Infrastructure:</b><br/>Fully managed & auto-scaling"]
+        M2["<b>Pros:</b><br/>Rapid deployment & pay-as-you-go"]
+        M3["<b>Best For:</b><br/>Standard tasks (e.g., Bedrock, Rekognition)"]
+    end
+
+    subgraph SelfHosted ["Self-Hosted APIs"]
+        direction TB
+        S1["<b>Infrastructure:</b><br/>Custom control via SageMaker"]
+        S2["<b>Pros:</b><br/>Strict data privacy & high-volume cost control"]
+        S3["<b>Best For:</b><br/>Proprietary models & strict latency needs"]
+    end
+
+    Title --> Managed
+    Title --> SelfHosted
+
+    %% Define the 'wide' class for larger, consistent boxes
+    classDef wide min-width:300px, min-height:100px, padding:15px;
+    class M1,M2,M3,S1,S2,S3 wide;
+
+    %% Styling
+    style Title fill:#eee,stroke:#333,stroke-width:2px,color:#000
+    style Managed fill:#f2fff2,stroke:#5cb85c,stroke-width:2px,color:#5cb85c
+    style M1 fill:#fff,stroke:#5cb85c,color:#000
+    style M2 fill:#fff,stroke:#5cb85c,color:#000
+    style M3 fill:#fff,stroke:#5cb85c,color:#000
+
+    style SelfHosted fill:#fff2f2,stroke:#d9534f,stroke-width:2px,color:#d9534f
+    style S1 fill:#fff,stroke:#d9534f,color:#000
+    style S2 fill:#fff,stroke:#d9534f,color:#000
+    style S3 fill:#fff,stroke:#d9534f,color:#000
+```
+
+---
+
+## Table 5: Machine Learning Operations (MLOps)
+### MLOps bridges the gap between creating a model and actually keeping it alive in production.
+| MLOps Concept | Primary Goal | AWS Service |
+| :--- | :--- | :--- |
+| **Experimentation** | Test models/algorithms quickly to find the best fit. | SageMaker Experiments |
+| **Repeatable Processes** | Ensure consistent training and evaluation. | SageMaker Pipelines |
+| **Scalable Systems** | Handle varying workloads without performance loss. | SageMaker + Auto-Scaling |
+| **Tech Debt Management** | Track version control to minimize manual interventions. | SageMaker Model Registry |
+| **Model Monitoring** | Detect data drift and performance decay. | SageMaker Model Monitor |
+| **Model Re-Training** | Update models with fresh data when performance degrades. | SageMaker Pipelines + Registry |
+
+## MLOps Lifecycle Visual Flow
+```mermaid
+graph LR
+    subgraph MLOps ["The MLOps Lifecycle"]
+        direction LR
+        Exp[1. Experimentation<br/>SageMaker Experiments] --> Rep[2. Repeatable Processes<br/>SageMaker Pipelines]
+        Rep --> Scale[3. Scalability<br/>Auto-Scaling]
+        Scale --> Reg[4. Tech Debt Mgmt<br/>Model Registry]
+        Reg --> Mon[5. Monitor & Retrain<br/>Model Monitor]
+        
+        %% The Feedback Loop
+        Mon -.->|Data Drift Detected| Exp
+    end
+
+    %% Styling
+    style Exp fill:#eeeeee,stroke:#333,color:#000
+    style Rep fill:#eeeeee,stroke:#333,color:#000
+    style Scale fill:#f96,stroke:#333,color:#fff,color:#000
+    style Reg fill:#eeeeee,stroke:#333,color:#000
+    style Mon fill:#bbf,stroke:#333,color:#fff,color:#000
+```
 
 ---
 
@@ -61,43 +212,7 @@
 ### Step 8: Monitor
   * Continuously *track model perfomrance* to maintain effectiveness.
   * **Amazon SageMaker Model Monitor** provides real-time tracking for anomalies, bias, etc.
-### Visual Flow
-```mermaid
-graph TD
-    %% Nodes outside the process box
-    Goal[1. Identify Business Goal] --> Frame[2. Frame ML Problem]
-    
-    %% Explicitly connect Frame to the start of the subgraph
-    Frame --> Collect
 
-    %% Subgraph for Data Processing Callout (Strictly 3-5)
-    subgraph Process_Data ["Process Data Phase"]
-        direction TB
-        Collect[3. Collect Data] --> Pre[4. Pre-Process Data]
-        Pre --> Eng[5. Engineer Features]
-    end
-
-    %% Connect out of the subgraph
-    Eng --> Train[6. Train, Tune, Evaluate]
-    Train --> Deploy[7. Deploy]
-    Deploy --> Monitor[8. Monitor]
-
-    %% Feedback Loop
-    Monitor -.-> |Insights for Improvement| Goal
-
-    %% Node Styling
-    style Goal fill:#f9f,stroke:#333,stroke-width:2px,color:#000
-    style Train fill:#f96,stroke:#333,stroke-width:2px,color:#000
-    style Deploy fill:#f96,stroke:#333,stroke-width:2px,color:#000
-    style Monitor fill:#bbf,stroke:#333,stroke-width:2px,color:#000
-    style Frame fill:#eee,stroke:#333,color:#000
-    style Collect fill:#eee,stroke:#333,color:#000
-    style Pre fill:#eee,stroke:#333,color:#000
-    style Eng fill:#eee,stroke:#333,color:#000
-
-    %% Subgraph Callout Styling
-    style Process_Data fill:#eeeeee,stroke:#1890ff,stroke-width:2px,stroke-dasharray: 5 5,color:#000
-```
 ## Summary of AWS Services (non-exhaustive list)
 ### Amazon SageMaker Data Wrangler:
   * Data Exploration
@@ -257,6 +372,6 @@ graph TD
 #### Model Re-Training
  * Models need to be re-trained when they experience degradation due to changes in input data or problem domains, such as shifts in user behavior and changes to input data.
  * Leveraging *Amazon SageMaker Pipelines* can automate re-training your model with fresh data.
- * Building and using a Model Registry will ensure only the best and most current models are deployed into producton.
+ * Building and using a Model Registry will ensure only the best and most current models are deployed into production.
 
 
