@@ -1,13 +1,31 @@
-# AWS Self-Enablement Pathway
+# ☁️ AWS Enterprise Enablement Architecture
 
-## This is a repository of my study notes as I work through the AWS Certification Pathways
+> **A Docs-as-Code approach to technical training and cloud enablement.**
 
-**Current Goal(s)**
 
-* **COMPLETED:** Q1 2026: AWS Cloud Practitioner Foundational
-* Q2 2026: AWS AI Practitioner Foundational
-* Q3 2026: AWS Solutions Architect Associate
 
-**Current Status:**
-  * 02.07.26 - Passed AWS Cloud Practitioner Exam (Score: 914!)
-  * 02.07.26 - Preparing for AWS AI Practitioner Exam (proposed exam date 05.2026)
+## 🎯 Project Overview
+In modern enterprise environments, technical documentation and training curriculums often become outdated the moment they are published to a static PDF. 
+
+This repository serves as a **live, version-controlled enterprise knowledge base**. By treating technical enablement curriculum as software (Docs-as-Code), this architecture ensures that training materials for Support, Sales, and Engineering teams remain accurate, scalable, and highly available.
+
+## 🛠️ The Architecture
+This project was engineered using standard developer tooling to integrate seamlessly into a CI/CD pipeline environment:
+* **Markdown:** For clean, responsive, and standardized text rendering across all devices.
+* **Mermaid.js:** For programmatic, code-based data visualization and architectural topology mapping (meaning diagrams can be updated via pull requests rather than graphic design software).
+* **Git/GitHub:** For version control, peer review, and continuous curriculum deployment.
+
+## 📊 Curriculum Deployment Status
+
+### 🟢 Production Deployed: AWS Cloud Practitioner (CLF-C02)
+A fully operational, foundational curriculum designed to upskill non-technical staff on core AWS infrastructure, security, networking, and FinOps.
+
+### 🚧 Active Build Pipeline: AWS AI Practitioner (AIF-C01)
+Currently in active development. This module focuses on the operationalization of Artificial Intelligence, including Deep Learning architectures, Foundation Models, and MLOps deployment strategies.
+
+---
+
+### 🚪 Access the Knowledge Base
+The full curriculum is deployed and hosted in the repository Wiki. 
+
+👉 **[Click Here to Enter the Enablement Wiki](YOUR_WIKI_URL_HERE)**
