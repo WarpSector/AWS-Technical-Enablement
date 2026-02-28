@@ -7,10 +7,12 @@
 ## 🎯 Project Overview
 In modern enterprise environments, technical documentation and training curriculums often become outdated the moment they are published to a static PDF. 
 
-This repository serves as a **live, version-controlled enterprise knowledge base**. By treating technical enablement curriculum as software (Docs-as-Code), this architecture ensures that training materials for Support, Sales, and Engineering teams remain accurate, scalable, and highly available.
+**This repository serves as a live, version-controlled enterprise knowledge base**.
+
+Treating technical enablement pipelines as software (*Docs-as-Code*), this technical documentation architecture ensures that training materials for Support, Sales, and Engineering teams remain `accurate`, `scalable`, and `highly available`.
 
 ## 🛠️ The Architecture
-This project was engineered using standard developer tooling to integrate seamlessly into a CI/CD pipeline environment:
+This project was constructed using standard developer tooling to integrate seamlessly into a CI/CD pipeline environment:
 * **Markdown:** For clean, responsive, and standardized text rendering across all devices.
 * **Mermaid.js:** For programmatic, code-based data visualization and architectural topology mapping (meaning diagrams can be updated via pull requests rather than graphic design software).
 * **Git/GitHub:** For version control, peer review, and continuous curriculum deployment.
@@ -28,4 +30,4 @@ Currently in active development. This module focuses on the operationalization o
 ### 🚪 Access the Knowledge Base
 The full curriculum is deployed and hosted in the repository Wiki. 
 
-👉 **[Click Here to Enter the Enablement Wiki](YOUR_WIKI_URL_HERE)**
+👉 **[Click Here to Enter the AWS Enablement Wiki](https://github.com/WarpSector/AWS-Technical-Enablement/wiki)**
