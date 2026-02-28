@@ -14,9 +14,9 @@ Treating technical enablement pipelines as software (*Docs-as-Code*), this techn
 
 ## 🛠️ The Architecture
 This project was constructed using standard developer tooling to integrate seamlessly into a CI/CD pipeline environment:
-* **Markdown:** For clean, responsive, and standardized text rendering across all devices.
-* **Mermaid.js:** For programmatic, code-based data visualization and architectural topology mapping (meaning diagrams can be updated via pull requests rather than graphic design software).
-* **Git/GitHub:** For version control, peer review, and continuous curriculum deployment.
+* **`Markdown:`** For clean, responsive, and standardized text rendering across all devices.
+* **`Mermaid.js:`** For programmatic, code-based data visualization for impactful information absorption and allowing live updates via pull requests.
+* **`Git/GitHub:`** For version control, peer review, and continuous curriculum deployment.
 <br><br/>
 
 ## 📊 Curriculum Deployment Status
