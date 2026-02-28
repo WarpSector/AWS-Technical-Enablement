@@ -1,6 +1,6 @@
 # ☁️ AWS Enterprise Enablement
 
-> **A Docs-as-Code approach to technical training and cloud enablement.**
+> **A Docs-as-Code approach to technical training and cloud and AI enablement.**
 
 
 
